@@ -5,7 +5,7 @@ author: "Marc-André Désautels"
 format: 
   revealjs:
     incremental: true
-    footer: "desautm.github.io/sphincs"
+    footer: "desautm.github.io/sphincs-plus"
 title-slide-attributes:
   data-background-color: "black"
 highlight-style: github
@@ -521,12 +521,14 @@ Signatures à usage unique.
 #| cache: true
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=red},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=0.75cm, minimum height = 0.75cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
+    arrow/.style={->, very thick},
     myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
-    arrow/.style={->, very thick}
+    messagearrow/.style={very thick, blue}
 ]
 
 \node[clesecrete] (cs0) {$cs_0$};
@@ -556,12 +558,14 @@ Signatures à usage unique.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=red},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=0.75cm, minimum height = 0.75cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
+    arrow/.style={->, very thick},
     myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
-    arrow/.style={->, very thick}
+    messagearrow/.style={very thick, blue}
 ]
 
 \node[clesecrete] (cs0) {$cs_0$};
@@ -597,12 +601,13 @@ Signatures à usage unique.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=red},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=0.75cm, minimum height = 0.75cm, fill=blue!50!white},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
+    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
     messagearrow/.style={very thick, blue}
 ]
 
@@ -641,12 +646,13 @@ Signatures à usage unique.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=red},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=0.75cm, minimum height = 0.75cm, fill=blue!50!white},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
+    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
     messagearrow/.style={very thick, blue}
 ]
 
@@ -683,12 +689,13 @@ Signatures à usage unique.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=red},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=0.75cm, minimum height = 0.75cm, fill=blue!50!white},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
+    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
     messagearrow/.style={very thick, blue}
 ]
 
@@ -729,14 +736,15 @@ Signatures à usage unique.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=blue!50!white},
-    hash/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=0.75cm, minimum height = 0.75cm, fill=blue!50!white},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    messagearrow/.style={very thick, blue},
+    hash/.style={fill=green}
 ]
 \node[message] (m) {0};
 \node[signature] (sign) [below=0.5cm of m] {$cs_0$};
@@ -766,14 +774,15 @@ Signatures à usage unique.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=blue!50!white},
-    hash/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=purple},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1cm, fill=green},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=0.75cm, minimum height = 0.75cm, fill=blue!50!white},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    messagearrow/.style={very thick, blue},
+    hash/.style={fill=purple}
 ]
 \node[message] (m) {0};
 \node[signature] (sign) [below=0.5cm of m] {$cs'_0$};
@@ -812,13 +821,15 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1.12cm, fill=blue!50!white},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm,fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=green, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=1cm, minimum height = 1cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=1.5cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    messagearrow/.style={very thick, blue},
+    hash/.style={fill=purple}
 ]
 
 \node[clesecrete] (cs0-0) {$cs_{0,0}$};
@@ -865,13 +876,13 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1.12cm, fill=blue!50!white},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=green, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=1cm, minimum height = 1cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=1.5cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \node[clesecrete] (cs0-0) {$cs_{0,0}$};
@@ -918,13 +929,13 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1.12cm, fill=blue!50!white},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=green, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=1cm, minimum height = 1cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=1.5cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \node[clesecrete] (cs0-0) {$cs_{0,0}$};
@@ -972,13 +983,13 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1.12cm, fill=blue!50!white},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=green, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=1cm, minimum height = 1cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=1.5cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \node[clesecrete] (cs0-0) {$cs_{0,0}$};
@@ -1028,13 +1039,13 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1.12cm, fill=blue!50!white},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=green, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=1cm, minimum height = 1cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=1.5cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \node[clesecrete] (cs0-0) {$cs_{0,0}$};
@@ -1086,13 +1097,13 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    node distance=1cm,
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=1.12cm, fill=blue!50!white},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=1.5cm, minimum height=1cm, fill=green, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=1cm, minimum height = 1cm, fill=blue!50!white},
+    every node/.style={very thick, rectangle, align=center, minimum width=1.5cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white,minimum width=1cm, minimum height = 1cm},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \node[clesecrete] (cs0-0) {$cs_{0,0}$};
@@ -1204,14 +1215,13 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0cm}
@@ -1274,14 +1284,13 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0cm}
@@ -1302,12 +1311,12 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 % \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
@@ -1339,14 +1348,13 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1367,21 +1375,21 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -1409,14 +1417,13 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1437,24 +1444,24 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -1484,14 +1491,13 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1512,12 +1518,12 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{10011100}}{
@@ -1528,14 +1534,14 @@ Signatures à usage unique de Winternitz
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -1565,14 +1571,13 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1593,12 +1598,12 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{10011100}}{
@@ -1607,20 +1612,20 @@ Signatures à usage unique de Winternitz
 }
 \node at ($(m2)!0.5!(m31)$) {\etcH};
 \foreach \i/\lbl in {0/{94},1/{207},2/{13},31/{156}}{
-    \node[clesecrete] (s\i) [below=0cm of m\i] {$cs_{\i}^{\lbl}$};
+    \node[signature] (s\i) [below=0cm of m\i] {$H^{\lbl}(cs_{\i})$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -1650,14 +1655,13 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1678,39 +1682,39 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{10011100}}{
-    \node[message] (m\i) [above=2.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=3cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \node at ($(m2)!0.5!(m31)$) {\etcH};
 \foreach \i/\lbl in {0/{94},1/{207},2/{13},31/{156}}{
-    \node[clesecrete] (s\i) [below=0cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
+    \node[signature] (s\i) [below=0cm of m\i] {$H^{\lbl}(cs_{\i})$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{94},1/{207},2/{13},31/{156}}{
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -1747,15 +1751,14 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1776,16 +1779,16 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100}}{
-    \node[message] (m\i) [above=3.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=4cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\lbl in {0/{0111 1001},1/{1110 1001},2/{0101 1000},31/{1100 0110}}{
@@ -1796,23 +1799,23 @@ Signatures à usage unique de Winternitz
 \node at ($(i2)!0.5!(i31)$) {\etcH};
 
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{94},1/{207},2/{13},31/{156}}{
-    \node[clesecrete] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -1842,15 +1845,15 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1871,16 +1874,16 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100}}{
-    \node[message] (m\i) [above=3.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=4cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\lbl in {0/{0111 1001},1/{1110 1001},2/{0101 1000},31/{1100 0110}}{
@@ -1891,28 +1894,28 @@ Signatures à usage unique de Winternitz
 \node at ($(i2)!0.5!(i31)$) {\etcH};
 
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {1/{207},2/{13},31/{156}}{
-    \node[clesecrete] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{121}}{
-    \node[clesecreteimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -1942,15 +1945,15 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -1971,16 +1974,16 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100}}{
-    \node[message] (m\i) [above=3.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=4cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\lbl in {0/{0111 1001},1/{1110 1001},2/{0101 1000},31/{1100 0110}}{
@@ -1991,28 +1994,28 @@ Signatures à usage unique de Winternitz
 \node at ($(i2)!0.5!(i31)$) {\etcH};
 
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {2/{13},31/{156}}{
-    \node[clesecrete] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{121},1/{233}}{
-    \node[clesecreteimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -2042,15 +2045,15 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -2071,16 +2074,16 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100}}{
-    \node[message] (m\i) [above=3.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=4cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\lbl in {0/{0111 1001},1/{1110 1001},2/{0101 1000},31/{1100 0110}}{
@@ -2091,28 +2094,28 @@ Signatures à usage unique de Winternitz
 \node at ($(i2)!0.5!(i31)$) {\etcH};
 
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {31/{156}}{
-    \node[clesecrete] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{121},1/{233},2/{88}}{
-    \node[clesecreteimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -2142,15 +2145,15 @@ Signatures à usage unique de Winternitz
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -2171,16 +2174,16 @@ Signatures à usage unique de Winternitz
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100}}{
-    \node[message] (m\i) [above=3.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=4cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\lbl in {0/{0111 1001},1/{1110 1001},2/{0101 1000},31/{1100 0110}}{
@@ -2191,23 +2194,23 @@ Signatures à usage unique de Winternitz
 \node at ($(i2)!0.5!(i31)$) {\etcH};
 
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{121},1/{233},2/{88},31/{198}}{
-    \node[clesecreteimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -2471,15 +2474,15 @@ count/.style={font=\Huge}
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -2500,19 +2503,19 @@ count/.style={font=\Huge}
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {32,33}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100},32/{Somme de},33/{Contrôle}}{
-    \node[message] (m\i) [above=3.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=4cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\lbl in {0/{0111 1001},1/{1110 1001},2/{0101 1000},31/{1100 0110},32/{Nombre $<$},33/{Petit}}{
@@ -2522,19 +2525,14 @@ count/.style={font=\Huge}
 \node at ($(m2)!0.5!(m31)$) {\etcH};
 \node at ($(i2)!0.5!(i31)$) {\etcH};
 
-% \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{94},1/{207},2/{13},31/{156}}{
-%     \node[clesecrete] (s\i) [below=1cm of m\i] {$cs_{\i}^{\lbl}$};
-%     \node[clepublique] (p\i) [below=0.75cm of s\i] {$cp_{\i}^{256}$};
-%     \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
-% }
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{121},1/{233},2/{88},31/{198}}{
-    \node[clesecreteimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signatureimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \foreach \i/\lbl in {32/{???},33/{???}}{
-    \node[clesecreteimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
+    \node[signatureimposteur] (s\i) [below=1cm of m\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
     \draw[arrow,red] (p\i)--(s\i) node[midway,left,font=\small] {};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
@@ -2542,14 +2540,14 @@ count/.style={font=\Huge}
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -2579,15 +2577,15 @@ count/.style={font=\Huge}
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -2608,41 +2606,41 @@ count/.style={font=\Huge}
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {32,33}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100},32/{Somme de},33/{Contrôle}}{
-    \node[message] (m\i) [above=2.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=3cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \node at ($(m2)!0.5!(m31)$) {\etcH};
 
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{94},1/{207},2/{13},31/{156},32/{26},33/{187}}{
-    \node[clesecrete] (s\i) [below=0cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signature] (s\i) [below=0cm of m\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -2662,7 +2660,7 @@ count/.style={font=\Huge}
 \end{tikzpicture}
 ```
 
-## {auto-animate=true}
+## 
 
 ```{r engine="tikz"}
 #| fig-align: "center"
@@ -2672,15 +2670,15 @@ count/.style={font=\Huge}
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clesecreteimposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    imposteur/.style={draw, very thick, rectangle, align=center, minimum width=2cm,minimum height = 0.75cm, fill=purple!50!white, font=\normalsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\normalsize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0.5cm}
@@ -2701,41 +2699,41 @@ count/.style={font=\Huge}
     \end{tikzpicture}
 }
 
-\node[clesecrete] (cs0-0) {$cs_{0}^0$};
+\node[clesecrete] (cs0-0) {$cs_{0}$};
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 \begin{scope}[xshift=8cm]
-\node[clesecrete] (cs31-0) {$cs_{31}^0$};
+\node[clesecrete] (cs31-0) {$cs_{31}$};
 \end{scope}
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {32,33}{
-    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}^0$};
+    \node[clesecrete] (cs\i-0) [right=0.1cm of cs\j-0] {$cs_{\i}$};
 }
 
 \foreach \i/\lbl in {0/{0101 1110},1/{1100 1111},2/{0000 1101},31/{1001 1100},32/{Somme de},33/{Contrôle}}{
-    \node[message] (m\i) [above=2.5cm of cs\i-0] {\lbl};
+    \node[message] (m\i) [above=3cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
 }
 \node at ($(m2)!0.5!(m31)$) {\etcH};
 
 \foreach \i/\lbl [evaluate=\lbl as \j using int(256-\lbl)] in {0/{94},1/{207},2/{13},31/{156},32/{26},33/{187}}{
-    \node[clesecrete] (s\i) [below=0cm of m\i] {$H^{\lbl}(cs_{\i}^0)$};
-    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i}^0)$};
-    \draw[arrow] (s\i)--(p\i) node[midway,left,font=\small] {\j\ $\times$};
+    \node[signature] (s\i) [below=0cm of m\i] {$H^{\lbl}(cs_{\i})$};
+    \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{256}(cs_{\i})$};
+    \draw[arrow] (s\i)--(p\i) node[midway,left=-0.5cm,font=\small] {\j\ $\times$};
 }
 \node at ($(s2)!0.5!(s31)$) {\etcH};
 \node at ($(p2)!0.5!(p31)$) {\etcH};
 
 \foreach \j [evaluate=\j as \k using int(\j-1)] in {1,2}{
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-\j) [below=\H of cs\i-\k] {$H^{\j}(cs_{\i})$};
 }
 }
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i}^0)$};
+    \node[clesecrete] (cs\i-255) [below=1cm of cs\i-2] {$H^{255}(cs_{\i})$};
 }
 \foreach \i in {0,1,2,31,32,33}{
-    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i}^0)$};
+    \node[clepublique] (cp\i-256) [below=\H of cs\i-255] {$H^{256}(cs_{\i})$};
 }
 
 \foreach \j in {0,1,2,255}{
@@ -2751,6 +2749,7 @@ count/.style={font=\Huge}
 \draw[arrow] (cs\i-\j)--(cs\i-\k);
 }
 }
+
 \node (temp) at ($(cp2-256)!0.5!(cp31-256)$) {};
 \node[clepublique] (mcp) [below=0.75cm of temp] {Clé Publique};
 
@@ -2786,40 +2785,69 @@ count/.style={font=\Huge}
 ```{r engine="tikz"}
 #| fig-align: "center"
 #| fig-with: 5
-#| label: "wots-schematise1"
+#| label: "wots-schematise-TB"
 #| cache: true
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    mynode/.style={minimum width = 0.5cm, minimum height = 0.75cm}
+clesecrete/.style={draw,thick,circle,fill=red!50!white,minimum width=0.5cm},
+signature/.style={draw,thick,circle,fill=blue!50!white,minimum width=0.5cm},
+clepublique/.style={draw,thick,circle,fill=green!50!white,minimum width=0.5cm}
 ]
-%
-\def\byte{
-\fill[green,opacity = 0.5] (0,0) rectangle++ (0.75,0.25);
-\fill[red,opacity = 0.5] (0,0.25) rectangle++ (0.75,0.25);
-\fill[blue,opacity = 0.5] (0,0.5) rectangle++ (0.75,0.25);
-\draw (0,0) rectangle++ (0.75,0.75);
+
+\def\V{4}        % hauteur totale
+\def\dx{0.75}     % espacement horizontal
+
+% #1 = liste des hauteurs (ex: {1,3,2})
+\newcommand{\wots}[2]{
+    \def\n{0}
+    \foreach \val [count=\i] in {#1} {
+        \pgfmathsetmacro{\x}{(\i-1)*\dx}
+        % Partie secrète (rouge)
+        \fill[red!50!white] (\x-0.25,0) rectangle ++(0.5,\val);
+        % Partie publique (vert)
+        \fill[green!50!white] (\x-0.25,\val) rectangle (\x+0.25,\V);
+        % Noeuds
+        \node[clesecrete] (cs-\i) at (\x,0) {};
+        \node[clepublique] (cp-\i) at (\x,\V) {};
+        % Lien
+        \draw[dotted,thick] (cs-\i) -- (cp-\i);
+        \node[signature] (s-\i) at (\x,\val) {};
+        \xdef\n{\i}
+    }
+    % Position du rectangle à droite
+    \pgfmathsetmacro{\xright}{(\n)*\dx}
+    % Rectangle dégradé global
+    \shade[
+        bottom color=green!50!white,
+        top color=red!50!white
+    ] (\xright-0.25,0) rectangle (\xright+0.5,\V);
+    \draw[dotted,thick] (\xright-0.25,0)--(\xright+0.5,0);
+    \draw[dotted,thick] (\xright-0.25,\V)--(\xright+0.5,\V);
+    \pgfmathsetmacro{\xlast}{(\n+1)*\dx+0.25}
+    % Partie secrète (rouge)
+    \fill[red!50!white] (\xlast-0.25,0) rectangle ++(0.5,#2);
+    % Partie publique (vert)
+    \fill[green!50!white] (\xlast-0.25,#2) rectangle (\xlast+0.25,\V);
+    \node[clesecrete] (cs-fin) at (\xlast,0) {};
+    \node[clepublique] (cp-fin) at (\xlast,\V) {};
+    \draw[dotted,thick] (cs-fin) -- (cp-fin);
+    \node[signature] at (\xlast,#2) {};
+
+    \node[clepublique] (cp-haut) at ($(cp-1)!0.5!(cp-fin)+(0,1)$) {};
+    \foreach \i in {1,2,3,fin}{
+        \draw[thick] (cp-haut.north)--(cp-\i.south);
+        % \draw[thick] (cp-haut.south)--(cp-\i.north);
+    }
+    \draw[thick,dotted] (cp-haut.north)--(\xright+0.125,\V);
+    % \draw[thick,dotted] (cp-haut.south)--(\xright+0.125,\V);
 }
-%
-\def\etcH{
-\begin{scope}
-\foreach \i in {-0.25,0,0.25}{
-\draw[fill=black] (\i,0) circle (1.5pt);
-}
+
+% Exemple
+\begin{scope}[rotate=180]
+\wots{1,3,2}{2.75}
 \end{scope}
-}
-\def\wots{
-\node[mynode] (A) {\tikz {\byte}};
-\node[mynode] (B) [right = -0.15cm of A] {\tikz {\byte}};
-\node[mynode] (C) [right = -0.15cm of B] {\tikz {\byte}};
-\node[mynode] (D) [right = -0.15cm of C] {\tikz {\etcH}};
-\node[mynode] (E) [right = -0.15cm of D] {\tikz {\byte}};
-\node[draw, fill = green] (F) [below = 0.3cm of C] {CP};
-\foreach \i in {A,B,C,E}{
-    \draw[thick,->] (\i.south)--++(0,0.1)--(\i.south)-|(F.north);
-}
-\node[draw,fit = (A) (B) (C) (D) (E) (F),thick] {};
-}
-\node {\tikz {\wots}};
+
+
 \end{tikzpicture}
 ```
 
@@ -2828,7 +2856,7 @@ count/.style={font=\Huge}
 ```{r engine="tikz"}
 #| fig-align: "center"
 #| fig-with: 5
-#| label: "wots-schematise2"
+#| label: "wots-schematise-BT"
 #| cache: true
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
@@ -3055,6 +3083,223 @@ flowchart BT
 
 ##
 
+```{mermaid}
+%%| fig-align: "center"
+
+flowchart BT
+  cs0["cs0"]:::clesecrete
+  cs1["cs1"]:::clesecrete
+  cs2["cs2"]:::clesecrete
+  cs3["cs3"]:::clesecrete
+  cs4["cs4"]:::clesecrete
+  cs5["cs5"]:::clesecrete
+  cs6["cs6"]:::clesecrete
+  cs7["cs7"]:::clesecrete
+
+  Hcs0["H(cs0)"]:::hash
+  Hcs1["H(cs1)"]:::hash
+  Hcs2["H(cs2)"]:::hash
+  Hcs3["H(cs3)"]:::hash
+  Hcs4["H(cs4)"]:::hash
+  Hcs5["H(cs5)"]:::hash
+  Hcs6["H(cs6)"]:::hash
+  Hcs7["H(cs7)"]:::hash
+
+  Hcs0-1["H(cs0-1)"]:::hash
+  Hcs2-3["H(cs2-3)"]:::hash
+  Hcs4-5["H(cs4-5)"]:::hash
+  Hcs6-7["H(cs6-7)"]:::hash
+
+  Hcs0-3["H(cs0-3)"]:::hash
+  Hcs4-7["H(cs4-7)"]:::hash
+
+  cp["cp"]:::clepublique
+
+  cs0 ==> Hcs0
+  cs1 ==> Hcs1
+  cs2 ==> Hcs2
+  cs3 ==> Hcs3
+  cs4 ==> Hcs4
+  cs5 ==> Hcs5
+  cs6 ==> Hcs6
+  cs7 ==> Hcs7
+
+  Hcs0 ==> Hcs0-1
+  Hcs1 ==> Hcs0-1
+  Hcs2 ==> Hcs2-3
+  Hcs3 ==> Hcs2-3
+  Hcs4 ==> Hcs4-5
+  Hcs5 ==> Hcs4-5
+  Hcs6 ==> Hcs6-7
+  Hcs7 ==> Hcs6-7
+
+  Hcs0-1 ==> Hcs0-3
+  Hcs2-3 ==> Hcs0-3
+  Hcs4-5 ==> Hcs4-7
+  Hcs6-7 ==> Hcs4-7
+
+  Hcs0-3 ==> cp
+  Hcs4-7 ==> cp
+
+  classDef clesecrete fill:red,color:black,stroke-width:4px,font-size:25px;
+  classDef clepublique fill:green,color:black,stroke-width:4px,font-size:25px;
+  classDef hash fill:blue,color:black,stroke-width:4px,font-size:25px;
+```
+
+##
+
+``` {mermaid}
+%%| fig-align: "center"
+
+flowchart BT
+  cs0["cs0"]:::clesecrete
+  cs1["cs1"]:::clesecrete
+  cs2["cs2"]:::clesecrete
+  cs3["cs3"]:::clesecrete
+  cs4["cs4"]:::clesecrete
+  cs5["cs5"]:::clesecrete
+  cs6["cs6"]:::clesecrete
+  cs7["cs7"]:::clesecrete
+  cs8["cs8"]:::clesecrete
+  cs9["cs9"]:::clesecrete
+  cs10["cs10"]:::clesecrete
+  cs11["cs11"]:::clesecrete
+  cs12["cs12"]:::clesecrete
+  cs13["cs13"]:::clesecrete
+  cs14["cs14"]:::clesecrete
+  cs15["cs15"]:::clesecrete
+
+  Hcs0["H(cs0)"]:::hash
+  Hcs1["H(cs1)"]:::hash
+  Hcs2["H(cs2)"]:::hash
+  Hcs3["H(cs3)"]:::hash
+  Hcs4["H(cs4)"]:::hash
+  Hcs5["H(cs5)"]:::hash
+  Hcs6["H(cs6)"]:::hash
+  Hcs7["H(cs7)"]:::hash
+  Hcs8["H(cs8)"]:::hash
+  Hcs9["H(cs9)"]:::hash
+  Hcs10["H(cs10)"]:::hash
+  Hcs11["H(cs11)"]:::hash
+  Hcs12["H(cs12)"]:::hash
+  Hcs13["H(cs13)"]:::hash
+  Hcs14["H(cs14)"]:::hash
+  Hcs15["H(cs15)"]:::hash
+
+  Hcs0-1["H(cs0-1)"]:::hash
+  Hcs2-3["H(cs2-3)"]:::hash
+  Hcs4-5["H(cs4-5)"]:::hash
+  Hcs6-7["H(cs6-7)"]:::hash
+  Hcs8-9["H(cs8-9)"]:::hash
+  Hcs10-11["H(cs10-11)"]:::hash
+  Hcs12-13["H(cs12-13)"]:::hash
+  Hcs14-15["H(cs14-15)"]:::hash
+
+  Hcs0-3["H(cs0-3)"]:::hash
+  Hcs4-7["H(cs4-7)"]:::hash
+  Hcs8-11["H(cs8-11)"]:::hash
+  Hcs12-15["H(cs12-15)"]:::hash
+
+  Hcs0-7["H(cs0-7)"]:::hash
+  Hcs8-15["H(cs8-15)"]:::hash
+
+  cp["cp"]:::clepublique
+
+  cs0 ==> Hcs0
+  cs1 ==> Hcs1
+  cs2 ==> Hcs2
+  cs3 ==> Hcs3
+  cs4 ==> Hcs4
+  cs5 ==> Hcs5
+  cs6 ==> Hcs6
+  cs7 ==> Hcs7
+  cs8 ==> Hcs8
+  cs9 ==> Hcs9
+  cs10 ==> Hcs10
+  cs11 ==> Hcs11
+  cs12 ==> Hcs12
+  cs13 ==> Hcs13
+  cs14 ==> Hcs14
+  cs15 ==> Hcs15
+
+  Hcs0 ==> Hcs0-1
+  Hcs1 ==> Hcs0-1
+  Hcs2 ==> Hcs2-3
+  Hcs3 ==> Hcs2-3
+  Hcs4 ==> Hcs4-5
+  Hcs5 ==> Hcs4-5
+  Hcs6 ==> Hcs6-7
+  Hcs7 ==> Hcs6-7
+  Hcs8 ==> Hcs8-9
+  Hcs9 ==> Hcs8-9
+  Hcs10 ==> Hcs10-11
+  Hcs11 ==> Hcs10-11
+  Hcs12 ==> Hcs12-13
+  Hcs13 ==> Hcs12-13
+  Hcs14 ==> Hcs14-15
+  Hcs15 ==> Hcs14-15
+
+  Hcs0-1 ==> Hcs0-3
+  Hcs2-3 ==> Hcs0-3
+  Hcs4-5 ==> Hcs4-7
+  Hcs6-7 ==> Hcs4-7
+  Hcs8-9 ==> Hcs8-11
+  Hcs10-11 ==> Hcs8-11
+  Hcs12-13 ==> Hcs12-15
+  Hcs14-15 ==> Hcs12-15
+
+  Hcs0-3 ==> Hcs0-7
+  Hcs4-7 ==> Hcs0-7
+  Hcs8-11 ==> Hcs8-15
+  Hcs12-15 ==> Hcs8-15
+
+  Hcs0-7 ==> cp
+  Hcs8-15 ==> cp
+
+  classDef clesecrete fill:red,color:black,stroke-width:4px,font-size:22px;
+  classDef clepublique fill:green,color:black,stroke-width:4px,font-size:22px;
+  classDef hash fill:blue,color:black,stroke-width:4px,font-size:22px;
+```
+
+# Comment faire pour authentifier une clé secrète à partir de la clé publique? {background-color="black" background-position="center"}
+
+##
+
+``` {mermaid}
+%%| label: quatre-cles-secretes-une-cle-publique-merkle-proof-etape-0
+%%| fig-align: "center"
+
+flowchart BT
+  cs0["cs0"]:::clesecrete
+  cs1["cs1"]:::clesecrete
+  cs2["cs2"]:::clesecrete
+  cs3["cs3"]:::clesecrete
+  Hcs0-1["H(cs0-1)"]:::hash
+  Hcs2-3["H(cs2-3)"]:::hash
+  Hcs0["H(cs0)"]:::hash
+  Hcs1["H(cs1)"]:::hash
+  Hcs2["H(cs2)"]:::hash
+  Hcs3["H(cs3)"]:::hash
+  cp["cp"]:::clepublique
+
+  cs0 ==> Hcs0
+  cs1 ==> Hcs1
+  cs2 ==> Hcs2
+  cs3 ==> Hcs3
+  Hcs0 ==> Hcs0-1
+  Hcs1 ==> Hcs0-1
+  Hcs2 ==> Hcs2-3
+  Hcs3 ==> Hcs2-3
+  Hcs0-1 ==> cp
+  Hcs2-3 ==> cp
+
+  classDef clesecrete fill:red,color:black,stroke-width:4px,font-size:25px;
+  classDef clepublique fill:green,color:black,stroke-width:4px,font-size:25px;
+  classDef hash fill:blue,color:black,stroke-width:4px,font-size:25px;
+```
+
+##
+
 ``` {mermaid}
 %%| label: quatre-cles-secretes-une-cle-publique-merkle-proof-etape-1
 %%| fig-align: "center"
@@ -3167,6 +3412,23 @@ flowchart BT
 - Pour authentifier $cs_1$, on doit fournir: $cs_1$, $H(cs_0)$ et $H(cs_{2-3})$.
 - On appelle cela une preuve de Merkle (*Merkle proof*) et elle permet de vérifier que $cs_1$ est bien authentique à partir de la clé publique $cp$.
 
+## Preuve de Merkle
+
+- Pour authentifier une clé secrète $cs_i$, on doit fournir:
+    - $cs_i$ elle-même;
+    - les *hash* de tous les noeuds frères sur le chemin de la feuille $cs_i$ jusqu'à la racine $cp$;
+    - la clé publique $cp$.
+- Le nombre de *hash* dépend de la hauteur de l'arbre.
+- Si le nombre de clés secrètes est de $2^h$, alors la preuve de Merkle contient $h$ *hash*.
+
+## Preuve de Merkle pour 4 clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - 2 ($4=2^2$) *hash* des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient 4 éléments (1 clé secrète + 2 *hash* + 1 clé publique).
+
 ##
 
 ```{mermaid}
@@ -3231,6 +3493,14 @@ flowchart BT
   classDef clepublique fill:green,color:black,stroke-width:4px,font-size:25px;
   classDef hash fill:blue,color:black,stroke-width:4px,font-size:25px;
 ```
+
+## Preuve de Merkle pour 8 clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - 3 ($8=2^3$) *hash* des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient 5 éléments (1 clé secrète + 3 *hash* + 1 clé publique).
 
 ##
 
@@ -3414,6 +3684,14 @@ flowchart BT
   classDef hash fill:blue,color:black,stroke-width:4px,font-size:22px;
 ```
 
+## Preuve de Merkle pour 16 clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - 4 ($16=2^4$) *hash* des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient 6 éléments (1 clé secrète + 4 *hash* + 1 clé publique).
+
 ##
 
 ``` {mermaid}
@@ -3531,6 +3809,14 @@ flowchart BT
   class cs4,Hcs5,Hcs6-7,Hcs0-3,Hcs8-15 proof;
 ```
 
+## Preuve de Merkle pour $2^h$ clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - h ($2^h$) *hash* des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient $h+2$ éléments (1 clé secrète + $h$ *hash* + 1 clé publique).
+
 # Few Time Signatures (FTS) {background-color="black" background-position="center"}
 
 Signatures utilisables un petit nombre de fois.
@@ -3557,14 +3843,15 @@ Signatures utilisables un petit nombre de fois.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\footnotesize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0cm}
@@ -3589,15 +3876,15 @@ Signatures utilisables un petit nombre de fois.
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2,3}{
     \node[clesecrete] (cs\i) [right=0.1cm of cs\j] {$cs_{\i}$};
 }
-\node[clesecrete] (cs65533) [right=1cm of cs3] {$cs_{65\ 533}$};
-\node[clesecrete] (cs65534) [right=0.1cm of cs65533] {$cs_{65\ 534}$};
-\node[clesecrete] (cs65535) [right=0.1cm of cs65534] {$cs_{65\ 535}$};
+\node[clesecrete] (cs13) [right=1.5cm of cs3] {$cs_{65\ 533}$};
+\node[clesecrete] (cs14) [right=0.1cm of cs13] {$cs_{65\ 534}$};
+\node[clesecrete] (cs15) [right=0.1cm of cs14] {$cs_{65\ 535}$};
 
-\foreach \i/\lbl in {0,1,2,3,65533/{65\ 533},65534/{65\ 534},65535/{65\ 535}}{
+\foreach \i/\lbl in {0,1,2,3,13/{65\ 533},14/{65\ 534},15/{65\ 535}}{
     \node[clepublique] (cp\i) [below=1cm of cs\i] {$cp_{\lbl}$};
 }
 
-\node[message] (m0) [above right=2.5cm and -1.4cm of cs0] {1011 1100 1010 0011};
+\node[message] (m0) [above right=3.5cm and -2cm of cs0] {1011 1100 1010 0011};
 \node [above=0cm of m0] {Bloc 0};
 \foreach \i/\lbl [evaluate=\i as \j using int(\i-1)] in {1/{0001 1100 1001 0010},2/{1101 1010 1100 0111}}{
     \node[message] (m\i) [right=0.5cm of m\j] {\lbl};
@@ -3606,18 +3893,18 @@ Signatures utilisables un petit nombre de fois.
 \node[message] (m15) [right=1.5cm of m2] {0101 0011 1101 0010};
     \node [above=0cm of m15] {Bloc 15};
 \node at ($(m2)!0.5!(m15)$) {\etcH};
-\node at ($(cs3)!0.5!(cs65533)$) {\etcH};
-\node at ($(cp3)!0.5!(cp65533)$) {\etcH};
+\node at ($(cs3)!0.5!(cs13)$) {\etcH};
+\node at ($(cp3)!0.5!(cp13)$) {\etcH};
 
-\foreach \i/\lbl in {0/{48\ 291},1/{7\ 314},2/{56\ 007},15/{21\ 458}}{
-    %\node[clesecrete] (s\i) [below=0cm of m\i] {$cs_{\lbl}$};
+\foreach \i/\lbl in {0/{48\ 291},1/{7314},2/{56\ 007},15/{21\ 458}}{
+    %\node[signature] (s\i) [below=0cm of m\i] {$cs_{\lbl}$};
     %\node[clepublique] (p\i) [below=1cm of s\i] {$cp_{\lbl}$};
     %\draw[arrow] (s\i)--(p\i);
 }
 %\node at ($(s2)!0.5!(s15)$) {\etcH};
 %\node at ($(p2)!0.5!(p15)$) {\etcH};
 
-\foreach \i in {0,1,2,3,65533,65534,65535}{
+\foreach \i in {0,1,2,3,13,14,15}{
     \draw[arrow] (cs\i)--(cp\i);
 }
 
@@ -3634,14 +3921,15 @@ Signatures utilisables un petit nombre de fois.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\footnotesize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0cm}
@@ -3666,15 +3954,15 @@ Signatures utilisables un petit nombre de fois.
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2,3}{
     \node[clesecrete] (cs\i) [right=0.1cm of cs\j] {$cs_{\i}$};
 }
-\node[clesecrete] (cs65533) [right=1cm of cs3] {$cs_{65\ 533}$};
-\node[clesecrete] (cs65534) [right=0.1cm of cs65533] {$cs_{65\ 534}$};
-\node[clesecrete] (cs65535) [right=0.1cm of cs65534] {$cs_{65\ 535}$};
+\node[clesecrete] (cs13) [right=1.5cm of cs3] {$cs_{65\ 533}$};
+\node[clesecrete] (cs14) [right=0.1cm of cs13] {$cs_{65\ 534}$};
+\node[clesecrete] (cs15) [right=0.1cm of cs14] {$cs_{65\ 535}$};
 
-\foreach \i/\lbl in {0,1,2,3,65533/{65\ 533},65534/{65\ 534},65535/{65\ 535}}{
+\foreach \i/\lbl in {0,1,2,3,13/{65\ 533},14/{65\ 534},15/{65\ 535}}{
     \node[clepublique] (cp\i) [below=1cm of cs\i] {$cp_{\lbl}$};
 }
 
-\node[message] (m0) [above right=2.5cm and -1.4cm of cs0] {1011 1100 1010 0011};
+\node[message] (m0) [above right=3.5cm and -2cm of cs0] {1011 1100 1010 0011};
 \node [above=0cm of m0] {Bloc 0};
 \foreach \i/\lbl [evaluate=\i as \j using int(\i-1)] in {1/{0001 1100 1001 0010},2/{1101 1010 1100 0111}}{
     \node[message] (m\i) [right=0.5cm of m\j] {\lbl};
@@ -3683,18 +3971,18 @@ Signatures utilisables un petit nombre de fois.
 \node[message] (m15) [right=1.5cm of m2] {0101 0011 1101 0010};
     \node [above=0cm of m15] {Bloc 15};
 \node at ($(m2)!0.5!(m15)$) {\etcH};
-\node at ($(cs3)!0.5!(cs65533)$) {\etcH};
-\node at ($(cp3)!0.5!(cp65533)$) {\etcH};
+\node at ($(cs3)!0.5!(cs13)$) {\etcH};
+\node at ($(cp3)!0.5!(cp13)$) {\etcH};
 
-\foreach \i/\lbl in {0/{48\ 291},1/{7\ 314},2/{56\ 007},15/{21\ 458}}{
-    \node[clesecrete] (s\i) [below=0cm of m\i] {$cs_{\lbl}$};
+\foreach \i/\lbl in {0/{48\ 291},1/{7314},2/{56\ 007},15/{21\ 458}}{
+    \node[signature] (s\i) [below=0cm of m\i] {$cs_{\lbl}$};
     %\node[clepublique] (p\i) [below=1cm of s\i] {$cp_{\lbl}$};
     %\draw[arrow] (s\i)--(p\i);
 }
 \node at ($(s2)!0.5!(s15)$) {\etcH};
 %\node at ($(p2)!0.5!(p15)$) {\etcH};
 
-\foreach \i in {0,1,2,3,65533,65534,65535}{
+\foreach \i in {0,1,2,3,13,14,15}{
     \draw[arrow] (cs\i)--(cp\i);
 }
 
@@ -3711,14 +3999,15 @@ Signatures utilisables un petit nombre de fois.
 #| 
 \usetikzlibrary{positioning,calc,fit}
 \begin{tikzpicture}[
-    signature/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=purple!50!white, font=\normalsize},
-    clesecrete/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=red, font=\normalsize},
-    clepublique/.style={draw, very thick, rectangle, align=center, minimum width=2cm, fill=green, font=\normalsize},
-    hash/.style={draw, very thick, circle, align=center, minimum width=1.12cm, fill=purple!50!white, font=\scriptsize},
-    message/.style={draw, very thick, rectangle, align=center, minimum width=2cm, minimum height = 0.75cm, fill=blue!50!white, font=\footnotesize},
-    myfit/.style={draw, dashed, thick, gray, inner sep=8pt},
+    every node/.style={very thick, rectangle, align=center, minimum width=2cm, minimum height = 1cm, font=\normalsize},
+    signature/.style={fill=blue!50!white},
+    clesecrete/.style={fill=red},
+    clepublique/.style={fill=green},
+    imposteur/.style={fill=orange},
+    signatureimposteur/.style={fill=orange!50!blue},
+    message/.style={fill=yellow!50!white},
     arrow/.style={->, very thick},
-    messagearrow/.style={very thick,blue}
+    messagearrow/.style={very thick, blue},
 ]
 
 \def\H{0cm}
@@ -3743,15 +4032,15 @@ Signatures utilisables un petit nombre de fois.
 \foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2,3}{
     \node[clesecrete] (cs\i) [right=0.1cm of cs\j] {$cs_{\i}$};
 }
-\node[clesecrete] (cs65533) [right=1cm of cs3] {$cs_{65\ 533}$};
-\node[clesecrete] (cs65534) [right=0.1cm of cs65533] {$cs_{65\ 534}$};
-\node[clesecrete] (cs65535) [right=0.1cm of cs65534] {$cs_{65\ 535}$};
+\node[clesecrete] (cs13) [right=1.5cm of cs3] {$cs_{65\ 533}$};
+\node[clesecrete] (cs14) [right=0.1cm of cs13] {$cs_{65\ 534}$};
+\node[clesecrete] (cs15) [right=0.1cm of cs14] {$cs_{65\ 535}$};
 
-\foreach \i/\lbl in {0,1,2,3,65533/{65\ 533},65534/{65\ 534},65535/{65\ 535}}{
+\foreach \i/\lbl in {0,1,2,3,13/{65\ 533},14/{65\ 534},15/{65\ 535}}{
     \node[clepublique] (cp\i) [below=1cm of cs\i] {$cp_{\lbl}$};
 }
 
-\node[message] (m0) [above right=2.5cm and -1.4cm of cs0] {1011 1100 1010 0011};
+\node[message] (m0) [above right=3.5cm and -2cm of cs0] {1011 1100 1010 0011};
 \node [above=0cm of m0] {Bloc 0};
 \foreach \i/\lbl [evaluate=\i as \j using int(\i-1)] in {1/{0001 1100 1001 0010},2/{1101 1010 1100 0111}}{
     \node[message] (m\i) [right=0.5cm of m\j] {\lbl};
@@ -3760,18 +4049,18 @@ Signatures utilisables un petit nombre de fois.
 \node[message] (m15) [right=1.5cm of m2] {0101 0011 1101 0010};
     \node [above=0cm of m15] {Bloc 15};
 \node at ($(m2)!0.5!(m15)$) {\etcH};
-\node at ($(cs3)!0.5!(cs65533)$) {\etcH};
-\node at ($(cp3)!0.5!(cp65533)$) {\etcH};
+\node at ($(cs3)!0.5!(cs13)$) {\etcH};
+\node at ($(cp3)!0.5!(cp13)$) {\etcH};
 
-\foreach \i/\lbl in {0/{48\ 291},1/{7\ 314},2/{56\ 007},15/{21\ 458}}{
-    \node[clesecrete] (s\i) [below=0cm of m\i] {$cs_{\lbl}$};
+\foreach \i/\lbl in {0/{48\ 291},1/{7314},2/{56\ 007},15/{21\ 458}}{
+    \node[signature] (s\i) [below=0cm of m\i] {$cs_{\lbl}$};
     \node[clepublique] (p\i) [below=1cm of s\i] {$cp_{\lbl}$};
     \draw[arrow] (s\i)--(p\i);
 }
 \node at ($(s2)!0.5!(s15)$) {\etcH};
 \node at ($(p2)!0.5!(p15)$) {\etcH};
 
-\foreach \i in {0,1,2,3,65533,65534,65535}{
+\foreach \i in {0,1,2,3,13,14,15}{
     \draw[arrow] (cs\i)--(cp\i);
 }
 
@@ -3852,9 +4141,69 @@ plt.show()
 
 ## HORST (*Hashing to Obtain Random Subsets with Trees*)
 
-- On utilise HORS pour créer les clés secrètes et publiques.
-- On construit un arbre de Merkle pour chacun des 32 blocs de clés publiques.
-- On concatène les 32 racines d'arbres de Merkle et on *hash* le résultat pour obtenir la clé publique finale.
+- HORS avec un arbre de Merkle.
+- Nous créons 65 536 nombres de 256 bits qui représentent la clé secrète.
+- On crée un arbre de Merkle, à partir du *hash* des 65 536 nombres de la clé secrète.
+- La racine de l'arbre de Merkle représente la clé publique.
+
+##
+
+```{r engine="tikz"}
+#| fig-align: "center"
+#| fig-with: 5
+#| label: "horst-8"
+#| cache: true
+#| 
+\usetikzlibrary{positioning,calc,fit}
+\begin{tikzpicture}[
+    every node/.style={circle, draw=black, thick, minimum size=8mm, inner sep=0pt},
+    level 1/.style={sibling distance=4cm, level distance=1.5cm},
+    level 2/.style={sibling distance=2cm, level distance=1.5cm},
+    level 3/.style={sibling distance=1cm, level distance=1.5cm},
+    edge from parent/.style={draw,<-,very thick},
+    clesecrete/.style={rectangle,fill=red}
+]
+
+% Root
+\node[fill=green] (racine) {}
+    child {node {}
+        child {node {}
+            node {}
+                child {node {} child {node[clesecrete] {}}}
+                child {node {} child {node[clesecrete] {}}}}
+        child {node {}
+                child {node {} child {node[clesecrete] {}}}
+                child {node {} child {node[clesecrete] {}}}}
+    }
+    child {node {}
+        child {node {}
+                child {node {} child {node[clesecrete] {}}}
+                child {node {} child {node[clesecrete] {}}}}
+        child {node {}
+                child {node {} child {node[clesecrete] {}}}
+                child {node {} child {node[clesecrete] {}}}}
+    };
+
+\end{tikzpicture}
+```
+
+## Produit de petites ~~grosses~~ signatures!
+
+. . .
+
+| **Type** | **Taille** |
+|---|---|
+| **Message** | 256 bits |
+| **Clé secrète** | 65 536 * 256 = 16 777 216 bits |
+| **Clé publique** | 256 = 256 bits |
+| **Signature** | 16 * 18 * 256 = 8 192 bits |
+| **Message + clé publique + signature** | 8 704 bits |
+
+: {tbl-colwidths="[45,55]"}
+
+. . .
+
+8 704 bits = 1 088 octets = 1,088 Ko
 
 # Deux avenues à explorer {background-color="black" background-position="center"}
 
@@ -3877,8 +4226,6 @@ Peut-on publier moins de clés publiques?
 :::
 
 ::::
-
-
 
 
 # Peut-on publier moins de clés publiques? {background-color="black" background-position="center"}

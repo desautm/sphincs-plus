@@ -826,8 +826,8 @@ Marc-André Désautels
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/winternitz-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-32" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
+<section id="section-32" class="slide level2">
+<h2></h2>
 
 <img data-src="index_files/figure-revealjs/winternitz-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="produit-de-petites-signatures" class="slide level2">
@@ -875,11 +875,11 @@ Marc-André Désautels
 <section id="section-33" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 
-<img data-src="index_files/figure-revealjs/wots-schematise1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-schematise-TB-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-34" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 
-<img data-src="index_files/figure-revealjs/wots-schematise2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<img data-src="index_files/figure-revealjs/wots-schematise-BT-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
 <section id="arbres-de-merkle" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
 <h1>Arbres de Merkle</h1>
@@ -1075,6 +1075,244 @@ Marc-André Désautels
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart BT
+  cs0["cs0"]:::clesecrete
+  cs1["cs1"]:::clesecrete
+  cs2["cs2"]:::clesecrete
+  cs3["cs3"]:::clesecrete
+  cs4["cs4"]:::clesecrete
+  cs5["cs5"]:::clesecrete
+  cs6["cs6"]:::clesecrete
+  cs7["cs7"]:::clesecrete
+
+  Hcs0["H(cs0)"]:::hash
+  Hcs1["H(cs1)"]:::hash
+  Hcs2["H(cs2)"]:::hash
+  Hcs3["H(cs3)"]:::hash
+  Hcs4["H(cs4)"]:::hash
+  Hcs5["H(cs5)"]:::hash
+  Hcs6["H(cs6)"]:::hash
+  Hcs7["H(cs7)"]:::hash
+
+  Hcs0-1["H(cs0-1)"]:::hash
+  Hcs2-3["H(cs2-3)"]:::hash
+  Hcs4-5["H(cs4-5)"]:::hash
+  Hcs6-7["H(cs6-7)"]:::hash
+
+  Hcs0-3["H(cs0-3)"]:::hash
+  Hcs4-7["H(cs4-7)"]:::hash
+
+  cp["cp"]:::clepublique
+
+  cs0 ==&gt; Hcs0
+  cs1 ==&gt; Hcs1
+  cs2 ==&gt; Hcs2
+  cs3 ==&gt; Hcs3
+  cs4 ==&gt; Hcs4
+  cs5 ==&gt; Hcs5
+  cs6 ==&gt; Hcs6
+  cs7 ==&gt; Hcs7
+
+  Hcs0 ==&gt; Hcs0-1
+  Hcs1 ==&gt; Hcs0-1
+  Hcs2 ==&gt; Hcs2-3
+  Hcs3 ==&gt; Hcs2-3
+  Hcs4 ==&gt; Hcs4-5
+  Hcs5 ==&gt; Hcs4-5
+  Hcs6 ==&gt; Hcs6-7
+  Hcs7 ==&gt; Hcs6-7
+
+  Hcs0-1 ==&gt; Hcs0-3
+  Hcs2-3 ==&gt; Hcs0-3
+  Hcs4-5 ==&gt; Hcs4-7
+  Hcs6-7 ==&gt; Hcs4-7
+
+  Hcs0-3 ==&gt; cp
+  Hcs4-7 ==&gt; cp
+
+  classDef clesecrete fill:red,color:black,stroke-width:4px,font-size:25px;
+  classDef clepublique fill:green,color:black,stroke-width:4px,font-size:25px;
+  classDef hash fill:blue,color:black,stroke-width:4px,font-size:25px;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-41" class="slide level2">
+<h2></h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart BT
+  cs0["cs0"]:::clesecrete
+  cs1["cs1"]:::clesecrete
+  cs2["cs2"]:::clesecrete
+  cs3["cs3"]:::clesecrete
+  cs4["cs4"]:::clesecrete
+  cs5["cs5"]:::clesecrete
+  cs6["cs6"]:::clesecrete
+  cs7["cs7"]:::clesecrete
+  cs8["cs8"]:::clesecrete
+  cs9["cs9"]:::clesecrete
+  cs10["cs10"]:::clesecrete
+  cs11["cs11"]:::clesecrete
+  cs12["cs12"]:::clesecrete
+  cs13["cs13"]:::clesecrete
+  cs14["cs14"]:::clesecrete
+  cs15["cs15"]:::clesecrete
+
+  Hcs0["H(cs0)"]:::hash
+  Hcs1["H(cs1)"]:::hash
+  Hcs2["H(cs2)"]:::hash
+  Hcs3["H(cs3)"]:::hash
+  Hcs4["H(cs4)"]:::hash
+  Hcs5["H(cs5)"]:::hash
+  Hcs6["H(cs6)"]:::hash
+  Hcs7["H(cs7)"]:::hash
+  Hcs8["H(cs8)"]:::hash
+  Hcs9["H(cs9)"]:::hash
+  Hcs10["H(cs10)"]:::hash
+  Hcs11["H(cs11)"]:::hash
+  Hcs12["H(cs12)"]:::hash
+  Hcs13["H(cs13)"]:::hash
+  Hcs14["H(cs14)"]:::hash
+  Hcs15["H(cs15)"]:::hash
+
+  Hcs0-1["H(cs0-1)"]:::hash
+  Hcs2-3["H(cs2-3)"]:::hash
+  Hcs4-5["H(cs4-5)"]:::hash
+  Hcs6-7["H(cs6-7)"]:::hash
+  Hcs8-9["H(cs8-9)"]:::hash
+  Hcs10-11["H(cs10-11)"]:::hash
+  Hcs12-13["H(cs12-13)"]:::hash
+  Hcs14-15["H(cs14-15)"]:::hash
+
+  Hcs0-3["H(cs0-3)"]:::hash
+  Hcs4-7["H(cs4-7)"]:::hash
+  Hcs8-11["H(cs8-11)"]:::hash
+  Hcs12-15["H(cs12-15)"]:::hash
+
+  Hcs0-7["H(cs0-7)"]:::hash
+  Hcs8-15["H(cs8-15)"]:::hash
+
+  cp["cp"]:::clepublique
+
+  cs0 ==&gt; Hcs0
+  cs1 ==&gt; Hcs1
+  cs2 ==&gt; Hcs2
+  cs3 ==&gt; Hcs3
+  cs4 ==&gt; Hcs4
+  cs5 ==&gt; Hcs5
+  cs6 ==&gt; Hcs6
+  cs7 ==&gt; Hcs7
+  cs8 ==&gt; Hcs8
+  cs9 ==&gt; Hcs9
+  cs10 ==&gt; Hcs10
+  cs11 ==&gt; Hcs11
+  cs12 ==&gt; Hcs12
+  cs13 ==&gt; Hcs13
+  cs14 ==&gt; Hcs14
+  cs15 ==&gt; Hcs15
+
+  Hcs0 ==&gt; Hcs0-1
+  Hcs1 ==&gt; Hcs0-1
+  Hcs2 ==&gt; Hcs2-3
+  Hcs3 ==&gt; Hcs2-3
+  Hcs4 ==&gt; Hcs4-5
+  Hcs5 ==&gt; Hcs4-5
+  Hcs6 ==&gt; Hcs6-7
+  Hcs7 ==&gt; Hcs6-7
+  Hcs8 ==&gt; Hcs8-9
+  Hcs9 ==&gt; Hcs8-9
+  Hcs10 ==&gt; Hcs10-11
+  Hcs11 ==&gt; Hcs10-11
+  Hcs12 ==&gt; Hcs12-13
+  Hcs13 ==&gt; Hcs12-13
+  Hcs14 ==&gt; Hcs14-15
+  Hcs15 ==&gt; Hcs14-15
+
+  Hcs0-1 ==&gt; Hcs0-3
+  Hcs2-3 ==&gt; Hcs0-3
+  Hcs4-5 ==&gt; Hcs4-7
+  Hcs6-7 ==&gt; Hcs4-7
+  Hcs8-9 ==&gt; Hcs8-11
+  Hcs10-11 ==&gt; Hcs8-11
+  Hcs12-13 ==&gt; Hcs12-15
+  Hcs14-15 ==&gt; Hcs12-15
+
+  Hcs0-3 ==&gt; Hcs0-7
+  Hcs4-7 ==&gt; Hcs0-7
+  Hcs8-11 ==&gt; Hcs8-15
+  Hcs12-15 ==&gt; Hcs8-15
+
+  Hcs0-7 ==&gt; cp
+  Hcs8-15 ==&gt; cp
+
+  classDef clesecrete fill:red,color:black,stroke-width:4px,font-size:22px;
+  classDef clepublique fill:green,color:black,stroke-width:4px,font-size:22px;
+  classDef hash fill:blue,color:black,stroke-width:4px,font-size:22px;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="comment-faire-pour-authentifier-une-clé-secrète-à-partir-de-la-clé-publique" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
+<h1>Comment faire pour authentifier une clé secrète à partir de la clé publique?</h1>
+
+</section>
+<section id="section-42" class="slide level2">
+<h2></h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="quatre-cles-secretes-une-cle-publique-merkle-proof-etape-0">
+<div>
+<pre class="mermaid mermaid-js" data-label="quatre-cles-secretes-une-cle-publique-merkle-proof-etape-0">flowchart BT
+  cs0["cs0"]:::clesecrete
+  cs1["cs1"]:::clesecrete
+  cs2["cs2"]:::clesecrete
+  cs3["cs3"]:::clesecrete
+  Hcs0-1["H(cs0-1)"]:::hash
+  Hcs2-3["H(cs2-3)"]:::hash
+  Hcs0["H(cs0)"]:::hash
+  Hcs1["H(cs1)"]:::hash
+  Hcs2["H(cs2)"]:::hash
+  Hcs3["H(cs3)"]:::hash
+  cp["cp"]:::clepublique
+
+  cs0 ==&gt; Hcs0
+  cs1 ==&gt; Hcs1
+  cs2 ==&gt; Hcs2
+  cs3 ==&gt; Hcs3
+  Hcs0 ==&gt; Hcs0-1
+  Hcs1 ==&gt; Hcs0-1
+  Hcs2 ==&gt; Hcs2-3
+  Hcs3 ==&gt; Hcs2-3
+  Hcs0-1 ==&gt; cp
+  Hcs2-3 ==&gt; cp
+
+  classDef clesecrete fill:red,color:black,stroke-width:4px,font-size:25px;
+  classDef clepublique fill:green,color:black,stroke-width:4px,font-size:25px;
+  classDef hash fill:blue,color:black,stroke-width:4px,font-size:25px;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-43" class="slide level2">
+<h2></h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
 <div id="quatre-cles-secretes-une-cle-publique-merkle-proof-etape-1">
 <div>
 <pre class="mermaid mermaid-js" data-label="quatre-cles-secretes-une-cle-publique-merkle-proof-etape-1">flowchart BT
@@ -1112,7 +1350,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-41" class="slide level2">
+<section id="section-44" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1153,7 +1391,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-42" class="slide level2">
+<section id="section-45" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1198,7 +1436,32 @@ Marc-André Désautels
 <li class="fragment">On appelle cela une preuve de Merkle (<em>Merkle proof</em>) et elle permet de vérifier que <span class="math inline">\(cs_1\)</span> est bien authentique à partir de la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul>
 </section>
-<section id="section-43" class="slide level2">
+<section id="preuve-de-merkle" class="slide level2">
+<h2>Preuve de Merkle</h2>
+<ul>
+<li class="fragment">Pour authentifier une clé secrète <span class="math inline">\(cs_i\)</span>, on doit fournir:
+<ul>
+<li class="fragment"><span class="math inline">\(cs_i\)</span> elle-même;</li>
+<li class="fragment">les <em>hash</em> de tous les noeuds frères sur le chemin de la feuille <span class="math inline">\(cs_i\)</span> jusqu’à la racine <span class="math inline">\(cp\)</span>;</li>
+<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
+</ul></li>
+<li class="fragment">Le nombre de <em>hash</em> dépend de la hauteur de l’arbre.</li>
+<li class="fragment">Si le nombre de clés secrètes est de <span class="math inline">\(2^h\)</span>, alors la preuve de Merkle contient <span class="math inline">\(h\)</span> <em>hash</em>.</li>
+</ul>
+</section>
+<section id="preuve-de-merkle-pour-4-clés-secrètes" class="slide level2">
+<h2>Preuve de Merkle pour 4 clés secrètes</h2>
+<ul>
+<li class="fragment">On doit fournir:
+<ul>
+<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
+<li class="fragment">2 (<span class="math inline">\(4=2^2\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
+</ul></li>
+<li class="fragment">La preuve de Merkle contient 4 éléments (1 clé secrète + 2 <em>hash</em> + 1 clé publique).</li>
+</ul>
+</section>
+<section id="section-46" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1270,7 +1533,19 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-44" class="slide level2">
+<section id="preuve-de-merkle-pour-8-clés-secrètes" class="slide level2">
+<h2>Preuve de Merkle pour 8 clés secrètes</h2>
+<ul>
+<li class="fragment">On doit fournir:
+<ul>
+<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
+<li class="fragment">3 (<span class="math inline">\(8=2^3\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
+</ul></li>
+<li class="fragment">La preuve de Merkle contient 5 éléments (1 clé secrète + 3 <em>hash</em> + 1 clé publique).</li>
+</ul>
+</section>
+<section id="section-47" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1344,7 +1619,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-45" class="slide level2">
+<section id="section-48" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1466,7 +1741,19 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-46" class="slide level2">
+<section id="preuve-de-merkle-pour-16-clés-secrètes" class="slide level2">
+<h2>Preuve de Merkle pour 16 clés secrètes</h2>
+<ul>
+<li class="fragment">On doit fournir:
+<ul>
+<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
+<li class="fragment">4 (<span class="math inline">\(16=2^4\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
+</ul></li>
+<li class="fragment">La preuve de Merkle contient 6 éléments (1 clé secrète + 4 <em>hash</em> + 1 clé publique).</li>
+</ul>
+</section>
+<section id="section-49" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1589,6 +1876,18 @@ Marc-André Désautels
 </div>
 </div>
 </div>
+</section>
+<section id="preuve-de-merkle-pour-2h-clés-secrètes" class="slide level2">
+<h2>Preuve de Merkle pour <span class="math inline">\(2^h\)</span> clés secrètes</h2>
+<ul>
+<li class="fragment">On doit fournir:
+<ul>
+<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
+<li class="fragment">h (<span class="math inline">\(2^h\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
+</ul></li>
+<li class="fragment">La preuve de Merkle contient <span class="math inline">\(h+2\)</span> éléments (1 clé secrète + <span class="math inline">\(h\)</span> <em>hash</em> + 1 clé publique).</li>
+</ul>
 </section></section>
 <section>
 <section id="few-time-signatures-fts" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
@@ -1611,15 +1910,15 @@ Marc-André Désautels
 <li class="fragment">Nous calculons le <em>hash</em> des 65 536 nombres de la clé secrète, ce qui représente la clé publique.</li>
 </ul>
 </section>
-<section id="section-47" class="slide level2">
+<section id="section-50" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/hors-16-octets-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-48" class="slide level2">
+<section id="section-51" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/hors-16-octets-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-49" class="slide level2">
+<section id="section-52" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/hors-16-octets-etape-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -1673,17 +1972,64 @@ Marc-André Désautels
 <li class="fragment">On peut donc signer quelques messages, mais pas tous les messages!</li>
 </ul>
 </section>
-<section id="section-50" class="slide level2">
+<section id="section-53" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/cle-privees-devoilees-1.png" width="960" class="r-stretch"></section>
 <section id="horst-hashing-to-obtain-random-subsets-with-trees" class="slide level2">
 <h2>HORST (<em>Hashing to Obtain Random Subsets with Trees</em>)</h2>
 <ul>
-<li class="fragment">On utilise HORS pour créer les clés secrètes et publiques.</li>
-<li class="fragment">On construit un arbre de Merkle pour chacun des 32 blocs de clés publiques.</li>
-<li class="fragment">On concatène les 32 racines d’arbres de Merkle et on <em>hash</em> le résultat pour obtenir la clé publique finale.</li>
+<li class="fragment">HORS avec un arbre de Merkle.</li>
+<li class="fragment">Nous créons 65 536 nombres de 256 bits qui représentent la clé secrète.</li>
+<li class="fragment">On crée un arbre de Merkle, à partir du <em>hash</em> des 65 536 nombres de la clé secrète.</li>
+<li class="fragment">La racine de l’arbre de Merkle représente la clé publique.</li>
 </ul>
+</section>
+<section id="section-54" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/horst-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="produit-de-petites-grosses-signatures" class="slide level2">
+<h2>Produit de petites <del>grosses</del> signatures!</h2>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Type</strong></th>
+<th><strong>Taille</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Message</strong></td>
+<td>256 bits</td>
+</tr>
+<tr class="even">
+<td><strong>Clé secrète</strong></td>
+<td>65 536 * 256 = 16 777 216 bits</td>
+</tr>
+<tr class="odd">
+<td><strong>Clé publique</strong></td>
+<td>256 = 256 bits</td>
+</tr>
+<tr class="even">
+<td><strong>Signature</strong></td>
+<td>16 * 18 * 256 = 8 192 bits</td>
+</tr>
+<tr class="odd">
+<td><strong>Message + clé publique + signature</strong></td>
+<td>8 704 bits</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>8 704 bits = 1 088 octets = 1,088 Ko</p>
+</div>
 </section></section>
 <section>
 <section id="deux-avenues-à-explorer" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
@@ -1710,7 +2056,7 @@ Marc-André Désautels
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>desautm.github.io/sphincs</p>
+<p>desautm.github.io/sphincs-plus</p>
 </div>
 </div></div>
 
