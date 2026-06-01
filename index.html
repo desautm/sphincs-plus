@@ -33,6 +33,7 @@
     }
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -172,18 +173,6 @@ Marc-André Désautels
 </li>
 <li class="fragment"><strong>Non-répudiation</strong> → empêcher de nier une action</li>
 </ul>
-</section>
-<section id="exemple-simple" class="slide level2">
-<h2>📦 Exemple simple</h2>
-<div class="fragment">
-<p>Message : <em>BONJOUR</em></p>
-</div>
-<div class="fragment">
-<p>→ Chiffré : <em>XK29QZ</em></p>
-</div>
-<div class="fragment">
-<p>👉 Seule une personne avec la bonne clé peut lire le message</p>
-</div>
 </section>
 <section id="applications" class="slide level2">
 <h2>💡 Applications</h2>
@@ -325,11 +314,11 @@ Marc-André Désautels
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Classique</td>
-<td style="text-align: center;"><span class="math inline">\(O(n)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O(N)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Grover (Quantique)</td>
-<td style="text-align: center;"><span class="math inline">\(O(\sqrt{n})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(O(\sqrt{N})\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -403,14 +392,14 @@ Marc-André Désautels
 <li class="fragment">Toujours la même taille de sortie (ex. 256 bits).</li>
 <li class="fragment">Déterministe : même entrée → même sortie.</li>
 <li class="fragment">Donne l’impression d’être aléatoire.</li>
-<li class="fragment">Effet avalanche : petite modification → grand changement du <em>hash</em>.</li>
+<li class="fragment">Effet avalanche : petite modification → grand changement de l’empreinte.</li>
 </ul>
 </div>
 </section>
 <section id="exemples-de-fonctions-de-hachage" class="slide level2">
 <h2>🔐 Exemples de fonctions de hachage</h2>
 <div class="fragment">
-<p>Le <em>hash</em> est toujours de la même longueur.</p>
+<p>L’empreinte est toujours de la même longueur.</p>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -437,7 +426,7 @@ Marc-André Désautels
 </div>
 </div>
 <div class="fragment">
-<p>Le <em>hash</em> change complètement même si on modifie un seul bit.</p>
+<p>L’empreinte change complètement même si on modifie un seul bit.</p>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -467,15 +456,15 @@ Marc-André Désautels
 <section id="propriétés-essentielles" class="slide level2">
 <h2>⚙️ Propriétés essentielles</h2>
 <ul>
-<li class="fragment"><strong>Résistance à la préimage</strong>: Retrouver le message original à partir du <em>hash</em> est difficile. Si on connait <span class="math inline">\(Y=H(X)\)</span>, il est difficile de trouver <span class="math inline">\(X\)</span> tel que <span class="math inline">\(H(X)=Y\)</span>.</li>
-<li class="fragment"><strong>Résistance à la seconde préimage</strong>: Trouver un autre message avec le même <em>hash</em> est difficile. Si on connait <span class="math inline">\(X\)</span>, il est difficile de trouver <span class="math inline">\(X'\)</span> tel que <span class="math inline">\(H(X)=H(X')\)</span>.</li>
-<li class="fragment"><strong>Résistance aux collisions</strong>: Trouver deux messages quelconques avec le même <em>hash</em> est difficile. Il est difficile de trouver <span class="math inline">\(X_1\)</span> et <span class="math inline">\(X_2\)</span> tels que <span class="math inline">\(H(X_1)=H(X_2)\)</span>.</li>
+<li class="fragment"><strong>Résistance à la préimage</strong>: Retrouver le message original à partir de l’empreinte est difficile. Si on connait <span class="math inline">\(Y=H(X)\)</span>, il est difficile de trouver <span class="math inline">\(X\)</span> tel que <span class="math inline">\(H(X)=Y\)</span>.</li>
+<li class="fragment"><strong>Résistance à la seconde préimage</strong>: Trouver un autre message avec la même empreinte est difficile. Si on connait <span class="math inline">\(X\)</span>, il est difficile de trouver <span class="math inline">\(X'\)</span> tel que <span class="math inline">\(H(X)=H(X')\)</span>.</li>
+<li class="fragment"><strong>Résistance aux collisions</strong>: Trouver deux messages quelconques avec la même empreinte est difficile. Il est difficile de trouver <span class="math inline">\(X_1\)</span> et <span class="math inline">\(X_2\)</span> tels que <span class="math inline">\(H(X_1)=H(X_2)\)</span>.</li>
 </ul>
 </section>
 <section id="sens-unique" class="slide level2">
 <h2>⛔ Sens unique</h2>
 <ul>
-<li class="fragment">Les fonctions de hachage sont conçues pour être faciles à calculer dans un sens (message → <em>hash</em>), mais difficiles à inverser (<em>hash</em> → message).</li>
+<li class="fragment">Les fonctions de hachage sont conçues pour être faciles à calculer dans un sens (message → empreinte), mais difficiles à inverser (empreinte → message).</li>
 <li class="fragment">On dit que ce sont des fonctions à <strong>sens unique</strong>.</li>
 </ul>
 <div class="fragment">
@@ -556,7 +545,7 @@ Marc-André Désautels
 <section id="comment-signer-plusieurs-bits" class="slide level2">
 <h2>Comment signer plusieurs bits?</h2>
 <ul>
-<li class="fragment">On trouve le <em>hash</em> du message. Ce <em>hash</em> est de taille fixe, 256 bits.</li>
+<li class="fragment">On trouve l’empreinte du message. Cette empreinte est de taille fixe, 256 bits.</li>
 <li class="fragment">On trouve 256 paires de nombres de 256 bits (clé secrète): <span class="math display">\[(cs_{0,0}, cs_{1,0}), (cs_{0,1}, cs_{1,1}), \ldots, (cs_{0,255}, cs_{1,255})\]</span></li>
 <li class="fragment">On calcule les empreintes des 256 paires de nombres (clé publique): <span class="math display">\[cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255\]</span></li>
 </ul>
@@ -592,6 +581,11 @@ Marc-André Désautels
 <li class="fragment">Au message suivant, on ne peut plus utiliser la même clé secrète!</li>
 <li class="fragment">On doit générer une nouvelle paire de clés secrète/publique pour chaque message à signer.</li>
 </ul>
+</section>
+<section id="section-17" class="slide level2 fullscreen-slide">
+<h2></h2>
+<iframe src="html/lamport.html" class="lamport-frame">
+</iframe>
 </section>
 <section id="produit-de-très-grosses-signatures" class="slide level2">
 <h2>Produit de très grosses signatures!</h2>
@@ -643,11 +637,11 @@ Marc-André Désautels
 <section id="wots" class="slide level2">
 <h2>WOTS</h2>
 <ul>
-<li class="fragment">On brise le <em>hash</em> du message en 32 morceaux de 8 bits.</li>
-<li class="fragment">On interprète chaque morceau de 8 bits comme un nombre entre 0 et 255.</li>
+<li class="fragment">On brise l’empreinte du message (256 bits) en 64 morceaux de 4 bits.</li>
+<li class="fragment">On interprète chaque morceau de 4 bits comme un nombre entre 0 et 15.</li>
 </ul>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <table class="caption-top">
 <thead>
@@ -658,19 +652,19 @@ Marc-André Désautels
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">0000 0000</td>
+<td style="text-align: center;">0000</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">0000 0001</td>
+<td style="text-align: center;">0001</td>
 <td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">0000 0010</td>
+<td style="text-align: center;">0010</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">0000 0011</td>
+<td style="text-align: center;">0011</td>
 <td style="text-align: center;">3</td>
 </tr>
 <tr class="odd">
@@ -678,16 +672,16 @@ Marc-André Désautels
 <td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">1111 1101</td>
-<td style="text-align: center;">253</td>
+<td style="text-align: center;">1101</td>
+<td style="text-align: center;">13</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">1111 1110</td>
-<td style="text-align: center;">254</td>
+<td style="text-align: center;">1110</td>
+<td style="text-align: center;">14</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">1111 1111</td>
-<td style="text-align: center;">255</td>
+<td style="text-align: center;">1111</td>
+<td style="text-align: center;">15</td>
 </tr>
 </tbody>
 </table>
@@ -695,39 +689,39 @@ Marc-André Désautels
 <section id="wots-1" class="slide level2">
 <h2>WOTS</h2>
 <ul>
-<li>On brise le <em>hash</em> du message en 32 morceaux de 8 bits.</li>
-<li>On interprète chaque morceau de 8 bits comme un nombre entre 0 et 255.</li>
-<li>Puisque nous formons 32 blocs de message, nous pourrions créer 32 familles de clés secrètes, une pour chaque bloc.</li>
+<li>On brise l’empreinte du message (256 bits) en 64 morceaux de 4 bits.</li>
+<li>On interprète chaque morceau de 4 bits comme un nombre entre 0 et 15.</li>
+<li>Puisque nous formons 64 blocs de message, nous pourrions créer 64 familles de clés secrètes, une pour chaque bloc.</li>
 </ul>
 <ul>
-<li class="fragment">Chaque famille de clés secrètes contiendrait 256 éléments, un pour chaque valeur possible du bloc de message.</li>
+<li class="fragment">Chaque famille de clés secrètes contiendrait 16 éléments, un pour chaque valeur possible du bloc de message.</li>
 </ul>
 </section>
-<section id="section-18" class="slide level2">
-<h2></h2>
-
-<img data-src="index_files/figure-revealjs/winternitz-before-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-19" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/winternitz-first-secret-key-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-64-blocks-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-20" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/winternitz-all-secret-key-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-first-secret-key-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-21" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/winternitz-all-secret-key-and-signature-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-all-secret-key-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-22" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/winternitz-message-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-all-secret-key-and-signature-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-23" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/winternitz-message-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-message-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-24" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/wots-message-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-25" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/winternitz-message-etape-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -736,30 +730,30 @@ Marc-André Désautels
 <ul>
 <li class="fragment">Supposons qu’un attaquant intercepte le message et la signature.</li>
 <li class="fragment">Il décide de remplacer le message par un autre message de même longueur.</li>
-<li class="fragment">Supposons que chaque bloc du <em>hash</em> du message modifié représente un nombre <strong>strictement</strong> plus grand que le bloc correspondant du <em>hash</em> du message original.</li>
+<li class="fragment">Supposons que chaque bloc de l’empreinte du message modifié représente un nombre <strong>strictement</strong> plus grand que le bloc correspondant de l’empreinte du message original.</li>
 <li class="fragment">L’attaquant peut alors continuer la chaîne de hachage!</li>
 </ul>
 </section>
-<section id="section-25" class="slide level2">
-<h2></h2>
-
-<img data-src="index_files/figure-revealjs/imposteur-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-26" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/imposteur-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-imposteur-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-27" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/imposteur-etape-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/imposteur-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-28" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/imposteur-etape-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-imposteur-etape-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-29" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/imposteur-etape-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<img data-src="index_files/figure-revealjs/wots-imposteur-etape-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-30" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/wots-imposteur-etape-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
 <section id="comment-prévenir-ce-genre-de-fraudes" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
 <h1>Comment prévenir ce genre de fraudes?</h1>
@@ -812,24 +806,28 @@ Marc-André Désautels
 <section id="nous-allons-ajouter-une-somme-de-contrôle-2" class="slide level2">
 <h2>Nous allons ajouter une somme de contrôle</h2>
 <ul>
-<li class="fragment">Le maximum représentable en utilisant 32 blocs de 256 bits est <span class="math inline">\(32 \times 256 = 8192\)</span>.</li>
-<li class="fragment">Nous avons besoin de 13 bits pour représenter ce nombre.</li>
-<li class="fragment">Nous pouvons donc ajouter deux blocs de 8 bits pour la somme de contrôle.</li>
-<li class="fragment">La somme de contrôle indique combien de <em>hash</em> il faut faire pour retrouver la clé publique.</li>
+<li class="fragment">Le maximum représentable en utilisant 64 blocs de 16 bits est <span class="math inline">\(64 \times 16 = 1024\)</span>.</li>
+<li class="fragment">Nous avons besoin de 10 bits pour représenter ce nombre.</li>
+<li class="fragment">Nous pouvons donc ajouter trois blocs de 4 bits pour la somme de contrôle.</li>
+<li class="fragment">La somme de contrôle indique combien d’empreintes il faut faire pour retrouver la clé publique.</li>
 </ul>
 </section>
-<section id="section-30" class="slide level2">
-<h2></h2>
-
-<img data-src="index_files/figure-revealjs/somme-de-controle-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-31" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/winternitz-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/somme-de-controle-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-32" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/winternitz-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/wots-plus-message-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-33" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/wots-complet-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/wots-complet-hash-cle-publique-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="produit-de-petites-signatures" class="slide level2">
 <h2>Produit de petites signatures!</h2>
 <div class="fragment">
@@ -851,7 +849,7 @@ Marc-André Désautels
 </tr>
 <tr class="even">
 <td><strong>Clé secrète</strong></td>
-<td>34 * 256 = 8 704 bits</td>
+<td>67 * 256 = 17 152 bits</td>
 </tr>
 <tr class="odd">
 <td><strong>Clé publique</strong></td>
@@ -859,24 +857,20 @@ Marc-André Désautels
 </tr>
 <tr class="even">
 <td><strong>Signature</strong></td>
-<td>34 * 256 = 8 704 bits</td>
+<td>67 * 256 = 17 152 bits</td>
 </tr>
 <tr class="odd">
 <td><strong>Message + clé publique + signature</strong></td>
-<td>9 216 bits</td>
+<td>17 664 bits</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="fragment">
-<p>9 216 bits = 1 152 octets = 1,15 Ko</p>
+<p>17 664 bits = 2 208 octets = 2,21 Ko</p>
 </div>
 </section>
-<section id="section-33" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
-
-<img data-src="index_files/figure-revealjs/wots-schematise-TB-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-34" class="slide level2" data-auto-animate="true">
+<section id="section-35" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 
 <img data-src="index_files/figure-revealjs/wots-schematise-BT-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
@@ -914,7 +908,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-35" class="slide level2">
+<section id="section-36" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -941,7 +935,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-36" class="slide level2">
+<section id="section-37" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -968,7 +962,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-37" class="slide level2">
+<section id="section-38" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -995,7 +989,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-38" class="slide level2">
+<section id="section-39" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1032,7 +1026,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-39" class="slide level2">
+<section id="section-40" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1071,7 +1065,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-40" class="slide level2">
+<section id="section-41" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1143,7 +1137,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-41" class="slide level2">
+<section id="section-42" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1270,7 +1264,7 @@ Marc-André Désautels
 <h1>Comment faire pour authentifier une clé secrète à partir de la clé publique?</h1>
 
 </section>
-<section id="section-42" class="slide level2">
+<section id="section-43" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1309,7 +1303,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-43" class="slide level2">
+<section id="section-44" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1350,7 +1344,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-44" class="slide level2">
+<section id="section-45" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1391,7 +1385,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-45" class="slide level2">
+<section id="section-46" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1461,7 +1455,7 @@ Marc-André Désautels
 <li class="fragment">La preuve de Merkle contient 4 éléments (1 clé secrète + 2 <em>hash</em> + 1 clé publique).</li>
 </ul>
 </section>
-<section id="section-46" class="slide level2">
+<section id="section-47" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1545,7 +1539,7 @@ Marc-André Désautels
 <li class="fragment">La preuve de Merkle contient 5 éléments (1 clé secrète + 3 <em>hash</em> + 1 clé publique).</li>
 </ul>
 </section>
-<section id="section-47" class="slide level2">
+<section id="section-48" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1619,7 +1613,7 @@ Marc-André Désautels
 </div>
 </div>
 </section>
-<section id="section-48" class="slide level2">
+<section id="section-49" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1753,7 +1747,7 @@ Marc-André Désautels
 <li class="fragment">La preuve de Merkle contient 6 éléments (1 clé secrète + 4 <em>hash</em> + 1 clé publique).</li>
 </ul>
 </section>
-<section id="section-49" class="slide level2">
+<section id="section-50" class="slide level2">
 <h2></h2>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
@@ -1910,15 +1904,15 @@ Marc-André Désautels
 <li class="fragment">Nous calculons le <em>hash</em> des 65 536 nombres de la clé secrète, ce qui représente la clé publique.</li>
 </ul>
 </section>
-<section id="section-50" class="slide level2">
-<h2></h2>
-
-<img data-src="index_files/figure-revealjs/hors-16-octets-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-51" class="slide level2">
 <h2></h2>
 
-<img data-src="index_files/figure-revealjs/hors-16-octets-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="index_files/figure-revealjs/hors-16-octets-etape-0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="section-52" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/hors-16-octets-etape-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-53" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/hors-16-octets-etape-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -1972,7 +1966,7 @@ Marc-André Désautels
 <li class="fragment">On peut donc signer quelques messages, mais pas tous les messages!</li>
 </ul>
 </section>
-<section id="section-53" class="slide level2">
+<section id="section-54" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/cle-privees-devoilees-1.png" width="960" class="r-stretch"></section>
@@ -1985,10 +1979,14 @@ Marc-André Désautels
 <li class="fragment">La racine de l’arbre de Merkle représente la clé publique.</li>
 </ul>
 </section>
-<section id="section-54" class="slide level2">
+<section id="section-55" class="slide level2">
 <h2></h2>
 
 <img data-src="index_files/figure-revealjs/horst-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="message-011-110-100" class="slide level2">
+<h2>Message 011 110 100</h2>
+
+<img data-src="index_files/figure-revealjs/horst-8-signature-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="produit-de-petites-grosses-signatures" class="slide level2">
 <h2>Produit de petites <del>grosses</del> signatures!</h2>
 <div class="fragment">
@@ -2018,41 +2016,163 @@ Marc-André Désautels
 </tr>
 <tr class="even">
 <td><strong>Signature</strong></td>
-<td>16 * 18 * 256 = 8 192 bits</td>
+<td>16 * 18 * 256 = 73 728 bits</td>
 </tr>
 <tr class="odd">
 <td><strong>Message + clé publique + signature</strong></td>
-<td>8 704 bits</td>
+<td>74 240 bits</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="fragment">
-<p>8 704 bits = 1 088 octets = 1,088 Ko</p>
+<p>74 240 bits = 9 280 octets = 9,280 Ko</p>
 </div>
-</section></section>
+</section>
+<section id="fors-forest-of-random-subsets" class="slide level2">
+<h2>FORS (<em>Forest of Random Subsets</em>)</h2>
+<ul>
+<li class="fragment">Pour chacun des blocs du message (16 blocs de 16 bits), on crée un HORST.</li>
+<li class="fragment">On signe le bloc <span class="math inline">\(i\)</span> du message avec le HORST <span class="math inline">\(i\)</span>.</li>
+<li class="fragment">Puisqu’un HORST est un arbre et que nous avons plusieurs arbres, nous appelons ça une forêt.</li>
+</ul>
+</section>
+<section id="message-011-110-100-1" class="slide level2">
+<h2>Message 011 110 100</h2>
+
+<img data-src="index_files/figure-revealjs/fors-8-signature-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="message-011-110-100-2" class="slide level2">
+<h2>Message 011 110 100</h2>
+
+<img data-src="index_files/figure-revealjs/fors-8-signature-unique-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-56" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-schematise-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
-<section id="deux-avenues-à-explorer" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
-<h1>Deux avenues à explorer</h1>
+<section id="sphincs" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
+<h1>SPHINCS+</h1>
 
 </section>
-<section id="deux-avenues-à-explorer-1" class="slide level2">
-<h2>Deux avenues à explorer</h2>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Idée 1:</p>
-<p>Peut-on produire moins de clés au total?</p>
-</div><div class="column" style="width:50%;">
-<p>Idée 2:</p>
-<p>Peut-on publier moins de clés publiques?</p>
-</div></div>
+<section id="sphincs-1" class="slide level2">
+<h2>SPHINCS+</h2>
+<ul>
+<li class="fragment">Nous voulons un système capable d’utiliser <span class="math inline">\(2^{64}\)</span> FORS.</li>
+<li class="fragment">18 446 744 073 709 600 000 FORS, c’est beaucoup!</li>
+<li class="fragment">Comment créer autant de FORS?</li>
+</ul>
+</section>
+<section id="sphincs-2" class="slide level2">
+<h2>SPHINCS+</h2>
+
+<img data-src="index_files/figure-revealjs/fors-2-a-la-64-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
+<li class="fragment">Plutôt que de créer <span class="math inline">\(2^{64}\)</span> FORS, nous allons utiliser un générateur de nombres pseudos-aléatoires (PRNG) pour créer les FORS à la volée.</li>
+</ul>
+</section>
+<section id="prng" class="slide level2">
+<h2>PRNG</h2>
+<ul>
+<li class="fragment">Les PRNG utilisent un algorithme mathématique pour produire une suite de nombres qui “a l’air” aléatoire.</li>
+<li class="fragment">Un PRNG part généralement d’une valeur initiale appelée <strong>graine</strong> (<em>seed</em>). À partir de cette graine, l’algorithme calcule une suite de nombres.</li>
+<li class="fragment">Même si la suite semble chaotique :
+<ul>
+<li class="fragment">elle est entièrement déterministe ;</li>
+<li class="fragment">la même graine produit toujours la même suite.</li>
+</ul></li>
+</ul>
+</section>
+<section id="prng-1" class="slide level2">
+<h2>PRNG</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Graine 12345    Graine 98765   </code></pre>
 </div>
-</section></section>
-<section id="peut-on-publier-moins-de-clés-publiques" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
-<h1>Peut-on publier moins de clés publiques?</h1>
-
+<div class="cell-output cell-output-stdout">
+<pre><code>------------------------------</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>53              16             
+93              99             
+1               75             
+38              71             
+47              90             
+24              11             
+34              95             
+72              54             
+55              61             
+20              33             </code></pre>
+</div>
+</div>
 </section>
+<section id="sphincs-3" class="slide level2">
+<h2>SPHINCS+</h2>
+
+<img data-src="index_files/figure-revealjs/fors-2-a-la-64-V2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><ul>
+<li class="fragment">Puisqu’on utilise un PRNG, on peut générer les FORS à la volée et ne pas les stocker.</li>
+<li class="fragment">On ne veut pas publier une clé pour chaque FORS.</li>
+<li class="fragment">Comment publier UNE seule clé publique qui représente les <span class="math inline">\(2^{64}\)</span> FORS?</li>
+<li class="fragment">On construit un arbre de Merkle!</li>
+</ul>
+</section>
+<section id="sauf-que" class="slide level2">
+<h2>Sauf que…</h2>
+<ul>
+<li class="fragment">Un arbre de Merkle avec <span class="math inline">\(2^{64}\)</span> feuilles, c’est gigantesque!</li>
+<li class="fragment">On fait <span class="math inline">\(2^{64}\)</span> empreintes à l’étage du bas;</li>
+<li class="fragment">On fait <span class="math inline">\(2^{63}\)</span> empreintes à l’étage au-dessus;</li>
+<li class="fragment">On fait <span class="math inline">\(2^{62}\)</span> empreintes à l’étage au-dessus;</li>
+<li class="fragment">…</li>
+<li class="fragment">On fait <span class="math inline">\(2^1\)</span> empreintes à l’avant-dernier étage;</li>
+<li class="fragment">On fait environ <span class="math inline">\(2^{65}\)</span> empreintes pour construire l’arbre de Merkle!</li>
+<li class="fragment">C’est complètement irréaliste!</li>
+</ul>
+</section>
+<section id="section-57" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-58" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-16-top-tree-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-59" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-16-top-tree-sub-trees-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-60" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-16-top-tree-sub-trees-virtual-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-61" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-16-before-wots-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-62" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-16-after-wots-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-63" class="slide level2">
+<h2></h2>
+
+<img data-src="index_files/figure-revealjs/fors-16-after-wots-with-hash-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="sphincs-4" class="slide level2">
+<h2>SPHINCS+</h2>
+<ul>
+<li class="fragment">L’étage le plus bas (7) contient <span class="math inline">\(2^{56}\)</span> blocs de <span class="math inline">\(2^8\)</span> FORS.</li>
+<li class="fragment">L’étage au-dessus (6) contient <span class="math inline">\(2^{48}\)</span> blocs de <span class="math inline">\(2^8\)</span> WOTS.</li>
+<li class="fragment">L’étage 5 contient <span class="math inline">\(2^{40}\)</span> blocs de <span class="math inline">\(2^8\)</span> WOTS.</li>
+<li class="fragment">L’étage 4 contient <span class="math inline">\(2^{32}\)</span> blocs de <span class="math inline">\(2^8\)</span> WOTS.</li>
+<li class="fragment">L’étage 3 contient <span class="math inline">\(2^{26}\)</span> blocs de <span class="math inline">\(2^8\)</span> WOTS.</li>
+<li class="fragment">L’étage 2 contient <span class="math inline">\(2^{18}\)</span> blocs de <span class="math inline">\(2^8\)</span> WOTS.</li>
+<li class="fragment">L’étage 1 contient <span class="math inline">\(2^{10}\)</span> blocs de <span class="math inline">\(2^8\)</span> WOTS.</li>
+<li class="fragment">L’étage 0 contient <span class="math inline">\(2^2\)</span> blocs de <span class="math inline">\(2^8\)</span> WOTS.</li>
+</ul>
+</section>
+<section id="section-64" class="slide level2">
+<h2></h2>
+
+
+<img data-src="index_files/figure-revealjs/sphincs-1.png" class="quarto-figure quarto-figure-center r-stretch" width="576"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -2180,7 +2300,7 @@ Marc-André Désautels
         autoPlayMedia: null,
 
         // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
+        preloadIframes: true,
 
         // Number of milliseconds between automatically proceeding to the
         // next slide, disabled when set to 0, this value can be overwritten

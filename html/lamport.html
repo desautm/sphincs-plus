@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Signature de Lamport</title>
+
+<style>
+
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    margin:0;
+    padding:10px;
+    color:#222;
+}
+
+h1{
+    text-align:center;
+    margin:0 0 10px 0;
+    font-size:24px;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:10px;
+    margin-bottom:10px;
+    box-shadow:0 1px 6px rgba(0,0,0,0.08);
+}
+
+.controls{
+    display:flex;
+    gap:10px;
+    align-items:flex-end;
+    flex-wrap:wrap;
+}
+
+textarea{
+    width:180px;
+    height:20px;
+    resize:none;
+    padding:4px;
+    border-radius:4px;
+    border:1px solid #ccc;
+    font-family:monospace;
+}
+
+.slider-container{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+input[type="range"]{
+    width:180px;
+}
+
+button{
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-size:13px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.info{
+    margin-top:8px;
+    padding:8px;
+    background:#f3f4f6;
+    border-radius:6px;
+    font-family:monospace;
+    overflow-wrap:break-word;
+    font-size:12px;
+}
+
+svg{
+    width:100%;
+    overflow:auto;
+}
+
+.label{
+    font-size:10px;
+    font-family:monospace;
+}
+
+.secret{
+    fill:#fecaca;
+    stroke:#dc2626;
+    stroke-width:2;
+}
+
+.public{
+    fill:#bbf7d0;
+    stroke:#15803d;
+    stroke-width:2;
+}
+
+.signature{
+    fill:#bfdbfe;
+    stroke:#2563eb;
+    stroke-width:3;
+}
+
+.block{
+    fill:#f8fafc;
+    stroke:#cbd5e1;
+    stroke-width:1.5;
+    rx:10;
+}
+
+.arrow{
+    stroke:#555;
+    stroke-width:1.2;
+    marker-end:url(#arrowhead);
+}
+
+.legend{
+    display:flex;
+    gap:12px;
+    margin-top:6px;
+    flex-wrap:wrap;
+    font-size:12px;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.legend-box{
+    width:14px;
+    height:14px;
+    border-radius:4px;
+}
+
+.secret-box{
+    background:#fecaca;
+    border:2px solid #dc2626;
+}
+
+.public-box{
+    background:#bbf7d0;
+    border:2px solid #15803d;
+}
+
+.signature-box{
+    background:#bfdbfe;
+    border:2px solid #2563eb;
+}
+
+.bits-display{
+    font-size:14px;
+    font-weight:bold;
+    color:#2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Signature de Lamport</h1>
+
+<div class="container">
+
+<div class="card">
+
+<div class="controls">
+
+<div>
+<div><b>Message à signer</b></div>
+
+<textarea id="message">Bonjour</textarea>
+</div>
+
+<div class="slider-container">
+
+<label>
+<b>Nombre de bits :</b>
+<span id="bitsValue">4</span>
+</label>
+
+<input
+    type="range"
+    id="bitsSlider"
+    min="2"
+    max="16"
+    value="4"
+/>
+
+</div>
+
+<div>
+<button onclick="generateLamport()">
+Générer
+</button>
+</div>
+
+</div>
+
+<div class="info">
+
+<div>
+<b>Bits signés :</b>
+
+<span
+    id="bits"
+    class="bits-display">
+</span>
+
+</div>
+
+</div>
+
+<div class="legend">
+
+<div class="legend-item">
+<div class="legend-box secret-box"></div>
+Clés secrètes
+</div>
+
+<div class="legend-item">
+<div class="legend-box public-box"></div>
+Clés publiques
+</div>
+
+<div class="legend-item">
+<div class="legend-box signature-box"></div>
+Signature
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<svg id="diagram" height="1200"></svg>
+
+</div>
+
+</div>
+
+<script>
+
+const slider =
+    document.getElementById("bitsSlider");
+
+slider.addEventListener("input", () => {
+
+    document.getElementById("bitsValue")
+        .textContent = slider.value;
+});
+
+async function sha256(text){
+
+    const encoder = new TextEncoder();
+
+    const data = encoder.encode(text);
+
+    const hashBuffer =
+        await crypto.subtle.digest(
+            "SHA-256",
+            data
+        );
+
+    const hashArray =
+        Array.from(new Uint8Array(hashBuffer));
+
+    return hashArray
+        .map(b =>
+            b.toString(16).padStart(2,"0")
+        )
+        .join("");
+}
+
+function short(x){
+
+    return x.substring(0,12);
+}
+
+function hexToBinary(hex){
+
+    return hex
+        .split("")
+        .map(c =>
+            parseInt(c,16)
+            .toString(2)
+            .padStart(4,"0")
+        )
+        .join("");
+}
+
+async function generateSecretPair(i){
+
+    const sk0 =
+        await sha256(
+            "SK0_" + i + "_" + Math.random()
+        );
+
+    const sk1 =
+        await sha256(
+            "SK1_" + i + "_" + Math.random()
+        );
+
+    return {
+
+        sk0,
+        sk1,
+
+        pk0: await sha256(sk0),
+        pk1: await sha256(sk1)
+    };
+}
+
+async function generateLamport(){
+
+    const message =
+        document.getElementById("message").value;
+
+    const bitsCount =
+        parseInt(slider.value);
+
+    const digest =
+        await sha256(message);
+
+    const binary =
+        hexToBinary(digest)
+        .substring(0,bitsCount);
+
+    document.getElementById("bits")
+        .textContent = binary;
+
+    const svg =
+        document.getElementById("diagram");
+
+    svg.innerHTML = `
+
+    <defs>
+
+    <marker
+        id="arrowhead"
+        markerWidth="8"
+        markerHeight="6"
+        refX="8"
+        refY="3"
+        orient="auto">
+
+        <polygon
+            points="0 0, 8 3, 0 6"
+            fill="#555"
+        />
+
+    </marker>
+
+    </defs>
+
+    `;
+
+    const rowHeight = 92;
+
+    svg.setAttribute(
+        "height",
+        bitsCount * rowHeight + 20
+    );
+
+    svg.setAttribute(
+        "width",
+        "760"
+    );
+
+    for(let i=0;i<bitsCount;i++){
+
+        const pair =
+            await generateSecretPair(i);
+
+        const y =
+            10 + i * rowHeight;
+
+        const bit =
+            binary[i];
+
+        const use0 =
+            bit === "0";
+
+        const use1 =
+            bit === "1";
+
+        svg.innerHTML += `
+
+        <rect
+            x="10"
+            y="${y}"
+            width="470"
+            height="78"
+            class="block"
+        />
+
+        <!-- SK0 -->
+
+        <rect
+            x="24"
+            y="${y + 12}"
+            width="130"
+            height="24"
+            rx="5"
+            class="${use0 ? 'signature' : 'secret'}"
+        />
+
+        <text
+            x="34"
+            y="${y + 28}"
+            class="label">
+
+            SK0 : ${short(pair.sk0)}
+
+        </text>
+
+        <!-- PK0 -->
+
+        <line
+            x1="160"
+            y1="${y + 24}"
+            x2="250"
+            y2="${y + 24}"
+            class="arrow"
+        />
+
+        <rect
+            x="250"
+            y="${y + 12}"
+            width="130"
+            height="24"
+            rx="5"
+            class="public"
+        />
+
+        <text
+            x="260"
+            y="${y + 28}"
+            class="label">
+
+            PK0 : ${short(pair.pk0)}
+
+        </text>
+
+        <!-- SK1 -->
+
+        <rect
+            x="24"
+            y="${y + 44}"
+            width="130"
+            height="24"
+            rx="5"
+            class="${use1 ? 'signature' : 'secret'}"
+        />
+
+        <text
+            x="34"
+            y="${y + 60}"
+            class="label">
+
+            SK1 : ${short(pair.sk1)}
+
+        </text>
+
+        <!-- PK1 -->
+
+        <line
+            x1="160"
+            y1="${y + 56}"
+            x2="250"
+            y2="${y + 56}"
+            class="arrow"
+        />
+
+        <rect
+            x="250"
+            y="${y + 44}"
+            width="130"
+            height="24"
+            rx="5"
+            class="public"
+        />
+
+        <text
+            x="260"
+            y="${y + 60}"
+            class="label">
+
+            PK1 : ${short(pair.pk1)}
+
+        </text>
+
+        <!-- Bit -->
+
+        <circle
+            cx="420"
+            cy="${y + 40}"
+            r="18"
+            fill="#2563eb"
+        />
+
+        <text
+            x="415"
+            y="${y + 46}"
+            font-size="16"
+            fill="white"
+            font-weight="bold">
+
+            ${bit}
+
+        </text>
+
+
+
+        `;
+    }
+}
+
+generateLamport();
+
+</script>
+
+</body>
+</html>
