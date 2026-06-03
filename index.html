@@ -1436,11 +1436,11 @@ Marc-André Désautels
 <li class="fragment">Pour authentifier une clé secrète <span class="math inline">\(cs_i\)</span>, on doit fournir:
 <ul>
 <li class="fragment"><span class="math inline">\(cs_i\)</span> elle-même;</li>
-<li class="fragment">les <em>hash</em> de tous les noeuds frères sur le chemin de la feuille <span class="math inline">\(cs_i\)</span> jusqu’à la racine <span class="math inline">\(cp\)</span>;</li>
+<li class="fragment">les empreintes de tous les noeuds frères sur le chemin de la feuille <span class="math inline">\(cs_i\)</span> jusqu’à la racine <span class="math inline">\(cp\)</span>;</li>
 <li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul></li>
-<li class="fragment">Le nombre de <em>hash</em> dépend de la hauteur de l’arbre.</li>
-<li class="fragment">Si le nombre de clés secrètes est de <span class="math inline">\(2^h\)</span>, alors la preuve de Merkle contient <span class="math inline">\(h\)</span> <em>hash</em>.</li>
+<li class="fragment">Le nombre d’empreintes’ dépend de la hauteur de l’arbre.</li>
+<li class="fragment">Si le nombre de clés secrètes est de <span class="math inline">\(2^h\)</span>, alors la preuve de Merkle contient <span class="math inline">\(h\)</span> empreintes.</li>
 </ul>
 </section>
 <section id="preuve-de-merkle-pour-4-clés-secrètes" class="slide level2">
@@ -1449,10 +1449,10 @@ Marc-André Désautels
 <li class="fragment">On doit fournir:
 <ul>
 <li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">2 (<span class="math inline">\(4=2^2\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">2 (<span class="math inline">\(4=2^2\)</span>) empreintes des noeuds frères;</li>
 <li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul></li>
-<li class="fragment">La preuve de Merkle contient 4 éléments (1 clé secrète + 2 <em>hash</em> + 1 clé publique).</li>
+<li class="fragment">La preuve de Merkle contient 4 éléments (1 clé secrète + 2 empreintes + 1 clé publique).</li>
 </ul>
 </section>
 <section id="section-47" class="slide level2">
@@ -1533,10 +1533,10 @@ Marc-André Désautels
 <li class="fragment">On doit fournir:
 <ul>
 <li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">3 (<span class="math inline">\(8=2^3\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">3 (<span class="math inline">\(8=2^3\)</span>) empreintes des noeuds frères;</li>
 <li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul></li>
-<li class="fragment">La preuve de Merkle contient 5 éléments (1 clé secrète + 3 <em>hash</em> + 1 clé publique).</li>
+<li class="fragment">La preuve de Merkle contient 5 éléments (1 clé secrète + 3 empreintes + 1 clé publique).</li>
 </ul>
 </section>
 <section id="section-48" class="slide level2">
@@ -1741,10 +1741,10 @@ Marc-André Désautels
 <li class="fragment">On doit fournir:
 <ul>
 <li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">4 (<span class="math inline">\(16=2^4\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">4 (<span class="math inline">\(16=2^4\)</span>) empreintes des noeuds frères;</li>
 <li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul></li>
-<li class="fragment">La preuve de Merkle contient 6 éléments (1 clé secrète + 4 <em>hash</em> + 1 clé publique).</li>
+<li class="fragment">La preuve de Merkle contient 6 éléments (1 clé secrète + 4 empreintes + 1 clé publique).</li>
 </ul>
 </section>
 <section id="section-50" class="slide level2">
@@ -1877,10 +1877,10 @@ Marc-André Désautels
 <li class="fragment">On doit fournir:
 <ul>
 <li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">h (<span class="math inline">\(2^h\)</span>) <em>hash</em> des noeuds frères;</li>
+<li class="fragment">h (<span class="math inline">\(2^h\)</span>) empreintes des noeuds frères;</li>
 <li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul></li>
-<li class="fragment">La preuve de Merkle contient <span class="math inline">\(h+2\)</span> éléments (1 clé secrète + <span class="math inline">\(h\)</span> <em>hash</em> + 1 clé publique).</li>
+<li class="fragment">La preuve de Merkle contient <span class="math inline">\(h+2\)</span> éléments (1 clé secrète + <span class="math inline">\(h\)</span> empreintes + 1 clé publique).</li>
 </ul>
 </section></section>
 <section>
@@ -1901,7 +1901,7 @@ Marc-André Désautels
 <li class="fragment">Un message de 256 bits peut être décomposé en 16 blocs de 16 bits chacun.</li>
 <li class="fragment">Chaque bloc de 16 bits peut être interprété comme un nombre entre 0 et 65 535.</li>
 <li class="fragment">Nous créons 65 536 nombres de 256 bits qui représentent la clé secrète.</li>
-<li class="fragment">Nous calculons le <em>hash</em> des 65 536 nombres de la clé secrète, ce qui représente la clé publique.</li>
+<li class="fragment">Nous calculons les empreintes des 65 536 nombres de la clé secrète, ce qui représente la clé publique.</li>
 </ul>
 </section>
 <section id="section-51" class="slide level2">
@@ -1975,7 +1975,7 @@ Marc-André Désautels
 <ul>
 <li class="fragment">HORS avec un arbre de Merkle.</li>
 <li class="fragment">Nous créons 65 536 nombres de 256 bits qui représentent la clé secrète.</li>
-<li class="fragment">On crée un arbre de Merkle, à partir du <em>hash</em> des 65 536 nombres de la clé secrète.</li>
+<li class="fragment">On crée un arbre de Merkle, à partir des empreintes des 65 536 nombres de la clé secrète.</li>
 <li class="fragment">La racine de l’arbre de Merkle représente la clé publique.</li>
 </ul>
 </section>
@@ -2103,6 +2103,11 @@ Marc-André Désautels
 20              33             </code></pre>
 </div>
 </div>
+</section>
+<section id="prng-2" class="slide level2">
+<h2>PRNG</h2>
+<iframe src="html/prng.html" width="100%" height="300" style="border:none;">
+</iframe>
 </section>
 <section id="sphincs-3" class="slide level2">
 <h2>SPHINCS+</h2>

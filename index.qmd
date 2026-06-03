@@ -3335,18 +3335,18 @@ flowchart BT
 
 - Pour authentifier une clé secrète $cs_i$, on doit fournir:
     - $cs_i$ elle-même;
-    - les *hash* de tous les noeuds frères sur le chemin de la feuille $cs_i$ jusqu'à la racine $cp$;
+    - les empreintes de tous les noeuds frères sur le chemin de la feuille $cs_i$ jusqu'à la racine $cp$;
     - la clé publique $cp$.
-- Le nombre de *hash* dépend de la hauteur de l'arbre.
-- Si le nombre de clés secrètes est de $2^h$, alors la preuve de Merkle contient $h$ *hash*.
+- Le nombre d'empreintes' dépend de la hauteur de l'arbre.
+- Si le nombre de clés secrètes est de $2^h$, alors la preuve de Merkle contient $h$ empreintes.
 
 ## Preuve de Merkle pour 4 clés secrètes
 
 - On doit fournir:
     - une clé secrète $cs_i$;
-    - 2 ($4=2^2$) *hash* des noeuds frères;
+    - 2 ($4=2^2$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient 4 éléments (1 clé secrète + 2 *hash* + 1 clé publique).
+- La preuve de Merkle contient 4 éléments (1 clé secrète + 2 empreintes + 1 clé publique).
 
 ##
 
@@ -3417,9 +3417,9 @@ flowchart BT
 
 - On doit fournir:
     - une clé secrète $cs_i$;
-    - 3 ($8=2^3$) *hash* des noeuds frères;
+    - 3 ($8=2^3$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient 5 éléments (1 clé secrète + 3 *hash* + 1 clé publique).
+- La preuve de Merkle contient 5 éléments (1 clé secrète + 3 empreintes + 1 clé publique).
 
 ##
 
@@ -3607,9 +3607,9 @@ flowchart BT
 
 - On doit fournir:
     - une clé secrète $cs_i$;
-    - 4 ($16=2^4$) *hash* des noeuds frères;
+    - 4 ($16=2^4$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient 6 éléments (1 clé secrète + 4 *hash* + 1 clé publique).
+- La preuve de Merkle contient 6 éléments (1 clé secrète + 4 empreintes + 1 clé publique).
 
 ##
 
@@ -3732,9 +3732,9 @@ flowchart BT
 
 - On doit fournir:
     - une clé secrète $cs_i$;
-    - h ($2^h$) *hash* des noeuds frères;
+    - h ($2^h$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient $h+2$ éléments (1 clé secrète + $h$ *hash* + 1 clé publique).
+- La preuve de Merkle contient $h+2$ éléments (1 clé secrète + $h$ empreintes + 1 clé publique).
 
 # Few Time Signatures (FTS) {background-color="black" background-position="center"}
 
@@ -3750,7 +3750,7 @@ Signatures utilisables un petit nombre de fois.
 - Un message de 256 bits peut être décomposé en 16 blocs de 16 bits chacun.
 - Chaque bloc de 16 bits peut être interprété comme un nombre entre 0 et 65 535.
 - Nous créons 65 536 nombres de 256 bits qui représentent la clé secrète.
-- Nous calculons le *hash* des 65 536 nombres de la clé secrète, ce qui représente la clé publique.
+- Nous calculons les empreintes des 65 536 nombres de la clé secrète, ce qui représente la clé publique.
 
 ##
 
@@ -4062,7 +4062,7 @@ plt.show()
 
 - HORS avec un arbre de Merkle.
 - Nous créons 65 536 nombres de 256 bits qui représentent la clé secrète.
-- On crée un arbre de Merkle, à partir du *hash* des 65 536 nombres de la clé secrète.
+- On crée un arbre de Merkle, à partir des empreintes des 65 536 nombres de la clé secrète.
 - La racine de l'arbre de Merkle représente la clé publique.
 
 ##
@@ -4603,6 +4603,15 @@ for _ in range(10):
 
     print(f"{n1:<15} {n2:<15}")
 ```
+
+
+## PRNG
+<iframe
+  src="html/prng.html"
+  width="100%"
+  height="300"
+  style="border:none;">
+</iframe>
 
 ## SPHINCS+
 

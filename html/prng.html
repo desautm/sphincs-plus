@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Générateur pseudo-aléatoire</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    margin:0;
+    padding:10px;
+    color:#222;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:12px;
+    border-radius:10px;
+    box-shadow:0 1px 6px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    margin:0 0 15px 0;
+    font-size:24px;
+}
+
+.controls{
+    display:flex;
+    gap:12px;
+    align-items:flex-end;
+    flex-wrap:wrap;
+}
+
+input{
+    padding:6px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    width:140px;
+    font-family:monospace;
+}
+
+button{
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-size:13px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.sequence{
+    margin-top:15px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+.value{
+    background:#dbeafe;
+    border:2px solid #2563eb;
+    border-radius:8px;
+    padding:8px;
+    min-width:65px;
+    text-align:center;
+    font-family:monospace;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.arrow{
+    font-size:20px;
+    color:#666;
+}
+
+.legend{
+    margin-top:12px;
+    padding:8px;
+    background:#f3f4f6;
+    border-radius:6px;
+    font-size:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Générateur pseudo-aléatoire</h1>
+
+<div class="controls">
+
+<div>
+<div><b>Graine</b></div>
+
+<input
+    id="seed"
+    value="12345">
+</div>
+
+<div>
+<button onclick="generateSequence()">
+Générer
+</button>
+</div>
+
+</div>
+
+<div
+    id="sequence"
+    class="sequence">
+</div>
+
+<div class="legend">
+Même graine → même suite de nombres.
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/*
+ Générateur congruentiel linéaire
+
+ X(n+1) = (aX(n)+c) mod m
+*/
+
+function randomGenerator(seed){
+
+    let state = seed;
+
+    return function(){
+
+        state =
+            (
+                1664525 * state +
+                1013904223
+            ) % 4294967296;
+
+        return state;
+    };
+}
+
+function generateSequence(){
+
+    const seed =
+        parseInt(
+            document.getElementById(
+                "seed"
+            ).value
+        );
+
+    const count = 10;
+
+    const generator =
+        randomGenerator(seed);
+
+    const sequenceDiv =
+        document.getElementById(
+            "sequence"
+        );
+
+    sequenceDiv.innerHTML = "";
+
+    for(let i=0;i<count;i++){
+
+        const value =
+            generator();
+
+        const box =
+            document.createElement(
+                "div"
+            );
+
+        box.className =
+            "value";
+
+        box.textContent =
+            value;
+
+        sequenceDiv.appendChild(
+            box
+        );
+
+        if(i < count - 1){
+
+            const arrow =
+                document.createElement(
+                    "div"
+                );
+
+            arrow.className =
+                "arrow";
+
+            arrow.innerHTML =
+                "→";
+
+            sequenceDiv.appendChild(
+                arrow
+            );
+        }
+    }
+}
+
+generateSequence();
+
+</script>
+
+</body>
+</html>
