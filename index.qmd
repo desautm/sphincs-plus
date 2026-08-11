@@ -10,7 +10,6 @@ format:
 title-slide-attributes:
   data-background-color: "black"
 highlight-style: github
-preload-iframes: true
 ---
 
 ```{r}
@@ -63,7 +62,7 @@ La **cryptographie** est l’ensemble des techniques permettant de:
 #| fig-width: 5
 #| label: "cryptographie-symetrique"
 #| cache: true
-#| 
+
 \usetikzlibrary{positioning}
 \begin{tikzpicture}[
     node distance=2.5cm,
@@ -403,7 +402,6 @@ L'empreinte change complètement même si on modifie un seul bit.
 ```{python}
 #| label: "hachage-un-bit-different"
 
-```{python}
 import pandas as pd
 from hashlib import blake2b
 from IPython.display import Markdown
@@ -3337,7 +3335,7 @@ flowchart BT
     - $cs_i$ elle-même;
     - les empreintes de tous les noeuds frères sur le chemin de la feuille $cs_i$ jusqu'à la racine $cp$;
     - la clé publique $cp$.
-- Le nombre d'empreintes' dépend de la hauteur de l'arbre.
+- Le nombre d'empreintes dépend de la hauteur de l'arbre.
 - Si le nombre de clés secrètes est de $2^h$, alors la preuve de Merkle contient $h$ empreintes.
 
 ## Preuve de Merkle pour 4 clés secrètes
@@ -4133,14 +4131,14 @@ plt.show()
                 child {node {} child {node[clesecrete] {}}}}
         child {node {}
                 child {node[fill=blue!50!white] {} child {node[clesecrete] {}}}
-                child {node {} child {node[clesecrete,fill=blue] {}}}}
+                child {node {} child {node[clesecrete,fill=blue] {011}}}}
     }
     child {node[fill=blue!50!white] {}
         child {node[fill=red!50!white] {}
-                child {node {} child {node[clesecrete,fill=black] {}}}
+                child {node {} child {node[clesecrete,fill=black,text=white] {100}}}
                 child {node[fill=black!50!white] {} child {node[clesecrete] {}}}}
         child {node[fill=black!50!white] {}
-                child {node {} child {node[clesecrete,fill=red] {}}}
+                child {node {} child {node[clesecrete,fill=red] {110}}}
                 child {node[fill=red!50!white] {} child {node[clesecrete] {}}}}
     };
 
@@ -4200,7 +4198,7 @@ plt.show()
                 child {node {} child {node[clesecrete] {}}}}
         child {node {}
                 child {node[fill=blue!50!white] {} child {node[clesecrete] {}}}
-                child {node {} child {node[clesecrete,fill=blue] {}}}}
+                child {node {} child {node[clesecrete,fill=blue] {011}}}}
     }
     child {node[fill=blue!50!white] {}
         child {node {}
@@ -4226,7 +4224,7 @@ plt.show()
                 child {node {} child {node[clesecrete] {}}}
                 child {node {} child {node[clesecrete] {}}}}
         child {node {}
-                child {node {} child {node[clesecrete,fill=red] {}}}
+                child {node {} child {node[clesecrete,fill=red] {110}}}
                 child {node[fill=red!50!white] {} child {node[clesecrete] {}}}}
     };
 
@@ -4242,7 +4240,7 @@ plt.show()
     }
     child {node {}
         child {node {}
-                child {node {} child {node[clesecrete,fill=black] {}}}
+                child {node {} child {node[clesecrete,fill=black,text=white] {100}}}
                 child {node[fill=black!50!white] {} child {node[clesecrete] {}}}}
         child {node[fill=black!50!white] {}
                 child {node {} child {node[clesecrete] {}}}
@@ -4279,7 +4277,7 @@ plt.show()
                 child {node {} child {node[clesecrete] {}}}}
         child {node {}
                 child {node[fill=blue!50!white] {} child {node[clesecrete] {}}}
-                child {node {} child {node[clesecrete,fill=blue] {}}}}
+                child {node {} child {node[clesecrete,fill=blue] {011}}}}
     }
     child {node[fill=blue!50!white] {}
         child {node {}
@@ -4305,7 +4303,7 @@ plt.show()
                 child {node {} child {node[clesecrete] {}}}
                 child {node {} child {node[clesecrete] {}}}}
         child {node {}
-                child {node {} child {node[clesecrete,fill=red] {}}}
+                child {node {} child {node[clesecrete,fill=red] {110}}}
                 child {node[fill=red!50!white] {} child {node[clesecrete] {}}}}
     };
 
@@ -4321,7 +4319,7 @@ plt.show()
     }
     child {node {}
         child {node {}
-                child {node {} child {node[clesecrete,fill=black] {}}}
+                child {node {} child {node[clesecrete,fill=black,text=white] {100}}}
                 child {node[fill=black!50!white] {} child {node[clesecrete] {}}}}
         child {node[fill=black!50!white] {}
                 child {node {} child {node[clesecrete] {}}}
@@ -4588,20 +4586,26 @@ import random
 # Deux graines différentes
 seed1 = 12345
 seed2 = 98765
+seed3 = 11111
+seed4 = 31415
 
 # Deux générateurs indépendants
 rng1 = random.Random(seed1)
 rng2 = random.Random(seed2)
+rng3 = random.Random(seed3)
+rng4 = random.Random(seed4)
 
 # Affichage
-print(f"{'Graine 12345':<15} {'Graine 98765':<15}")
-print("-" * 30)
+print(f"{'Graine 12345':<15} {'Graine 98765':<15} {'Graine 11111':<15} {'Graine 31415':<15}")
+print("-" * 60)
 
 for _ in range(10):
     n1 = rng1.randint(0, 100)
     n2 = rng2.randint(0, 100)
+    n3 = rng3.randint(0, 100)
+    n4 = rng4.randint(0, 100)
 
-    print(f"{n1:<15} {n2:<15}")
+    print(f"{n1:<15} {n2:<15} {n3:<15} {n4:<15}")
 ```
 
 

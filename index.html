@@ -1439,7 +1439,7 @@ Marc-André Désautels
 <li class="fragment">les empreintes de tous les noeuds frères sur le chemin de la feuille <span class="math inline">\(cs_i\)</span> jusqu’à la racine <span class="math inline">\(cp\)</span>;</li>
 <li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul></li>
-<li class="fragment">Le nombre d’empreintes’ dépend de la hauteur de l’arbre.</li>
+<li class="fragment">Le nombre d’empreintes dépend de la hauteur de l’arbre.</li>
 <li class="fragment">Si le nombre de clés secrètes est de <span class="math inline">\(2^h\)</span>, alors la preuve de Merkle contient <span class="math inline">\(h\)</span> empreintes.</li>
 </ul>
 </section>
@@ -2085,22 +2085,22 @@ Marc-André Désautels
 <h2>PRNG</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Graine 12345    Graine 98765   </code></pre>
+<pre><code>Graine 12345    Graine 98765    Graine 11111    Graine 31415   </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>------------------------------</code></pre>
+<pre><code>------------------------------------------------------------</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>53              16             
-93              99             
-1               75             
-38              71             
-47              90             
-24              11             
-34              95             
-72              54             
-55              61             
-20              33             </code></pre>
+<pre><code>53              16              42              75             
+93              99              3               36             
+1               75              45              57             
+38              71              46              5              
+47              90              86              69             
+24              11              51              67             
+34              95              98              53             
+72              54              14              16             
+55              61              65              91             
+20              33              81              84             </code></pre>
 </div>
 </div>
 </section>
@@ -2305,7 +2305,7 @@ Marc-André Désautels
         autoPlayMedia: null,
 
         // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: true,
+        preloadIframes: null,
 
         // Number of milliseconds between automatically proceeding to the
         // next slide, disabled when set to 0, this value can be overwritten
