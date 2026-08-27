@@ -393,6 +393,8 @@ df = pd.DataFrame(data)
 Markdown(df.to_markdown(index=False))
 ```
 
+## 🔐 Exemples de fonctions de hachage
+
 . . .
 
 L'empreinte change complètement même si on modifie un seul bit.
@@ -422,7 +424,6 @@ df = pd.DataFrame(data)
 Markdown(df.to_markdown(index=False))
 ```
 
-. . .
 
 ## ⚙️ Propriétés essentielles
 
@@ -1583,7 +1584,7 @@ Signatures à usage unique de Winternitz
 \foreach \i/\lbl/\bin in {0/{0011}/3,1/{1100}/12,2/{1001}/9,63/{1110}/14}{
     \node[message] (m\i) [above=3cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
-    \node[signature] (s\i) [below=0cm of m\i] {$H^{\bin}(cs_0)$};
+    \node[signature] (s\i) [below=0cm of m\i] {$H^{\bin}(cs_{\i})$};
 }
 \node at ($(m2)!0.5!(m63)$) {\etcH};
 \node at ($(s2)!0.5!(s63)$) {\etcH};
@@ -1663,7 +1664,7 @@ Signatures à usage unique de Winternitz
 \foreach \i/\lbl/\bin [evaluate=\bin as \j using int(16-\bin)] in {0/{0011}/3,1/{1100}/12,2/{1001}/9,63/{1110}/14}{
     \node[message] (m\i) [above=3cm of cs\i-0] {\lbl};
     \node [above=0cm of m\i] {Bloc \i};
-    \node[signature] (s\i) [below=0cm of m\i] {$H^{\bin}(cs_0)$};
+    \node[signature] (s\i) [below=0cm of m\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
@@ -1755,7 +1756,7 @@ Signatures à usage unique de Winternitz
     \node[message] (m\i) [above=4cm of cs\i-0] {\lbl};
     \node[imposteur] (i\i) [below=0cm of m\i] {\imp};
     \node [above=0cm of m\i] {Bloc \i};
-    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
@@ -1844,12 +1845,12 @@ Signatures à usage unique de Winternitz
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {1/12,2/9,63/14}{
-    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {0/7}{
-    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
@@ -1938,12 +1939,12 @@ Signatures à usage unique de Winternitz
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {2/9,63/14}{
-    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {0/7,1/13}{
-    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
@@ -2032,12 +2033,12 @@ Signatures à usage unique de Winternitz
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {63/14}{
-    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signature] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {0/7,1/13,2/11}{
-    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
@@ -2126,7 +2127,7 @@ Signatures à usage unique de Winternitz
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {0/7,1/13,2/11,63/15}{
-    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
@@ -2457,12 +2458,12 @@ count/.style={font=\Huge}
 %     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 % }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {0/7,1/13,2/11,63/15}{
-    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_0)$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
 \foreach \i in {64,65,66}{
-    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{???}(cs_0)$};
+    \node[signatureimposteur] (s\i) [below=0cm of i\i] {$H^{???}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow,red] (p\i)--(s\i);
 }
@@ -2553,7 +2554,7 @@ count/.style={font=\Huge}
     \node [above=0cm of m\i] {Bloc \i};
 }
 \foreach \i/\bin [evaluate=\bin as \j using int(16-\bin)] in {0/3,1/12,2/9,63/14,64/2,65/13,66/11}{
-    \node[signature] (s\i) [below=0cm of m\i] {$H^{\bin}(cs_0)$};
+    \node[signature] (s\i) [below=0cm of m\i] {$H^{\bin}(cs_{\i})$};
     \node[clepublique] (p\i) [below=0.75cm of s\i] {$H^{16}(cs_{\i})$};
     \draw[arrow] (s\i)--(p\i) node[midway,left=-0.6cm,font=\small] {\j\ $\times$};
 }
@@ -5941,7 +5942,7 @@ merkle/.style={fill=blue}
 \end{tikzpicture}
 ```
 
-
+## FIN
 
 
 
