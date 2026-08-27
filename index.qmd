@@ -5791,6 +5791,543 @@ clepublique/.style={draw,thick,circle,fill=green!50!white,inner sep=3pt}
 \end{tikzpicture}
 ```
 
+##
+
+```{r engine="tikz"}
+#| fig-align: "center"
+#| fig-with: 5
+#| label: "fors-16-bad-actor-1"
+#| cache: true
+#| 
+\usetikzlibrary{positioning,calc,fit}
+\begin{tikzpicture}[
+mynode/.style={draw,circle,very thick, align=center, minimum width=0.75cm,fill=blue!50!white},
+]
+
+%------------------------------------------------
+% Mini arbre binaire
+% #1 = centre de l'arbre
+%------------------------------------------------
+\newcommand{\MiniTree}[1]{
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (root) at (#1) {};
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (leafL) at ($(root)+(-0.12,-0.28)$) {};
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (leafR) at ($(root)+(0.12,-0.28)$) {};
+    \draw (root) -- (leafL);
+    \draw (root) -- (leafR);
+}
+
+%------------------------------------------------
+% #1 = node au sommet supérieur
+% #2 = largeur du triangle
+% #3 = hauteur du triangle
+%------------------------------------------------
+\newcommand{\TopTriangle}[3]{
+    \coordinate (left)  at ($(#1)+(-#2/2,-#3)$);
+    \coordinate (right) at ($(#1)+(#2/2,-#3)$);
+    \draw[very thick,fill=green!50]
+        (#1) -- (left) -- (right) -- cycle;
+    \coordinate (basecenter) at ($(left)!0.5!(right)$);
+    \coordinate (yline) at ($(basecenter)+(0,0.35)$);
+    \node (t1) at ($(yline)+(-1,0.1)$) {};
+    \MiniTree{t1}
+    \node (t2) at ($(yline)+(-0.45,0.1)$) {};
+    \MiniTree{t2}
+    \node (t3) at ($(yline)+(0.85,0.1)$) {};
+    \MiniTree{t3}
+    \node at ($(yline)+(0.2,-0.12)$) {$\ldots$};
+    \node[
+        draw,
+        very thick,
+        circle,
+        fill=green,
+        inner sep=5pt
+    ]
+    (midnode)
+    at ($(#1)+(-0.05,-1)$) {};
+    \draw (t1.north) -- (midnode);
+    \draw (t2.north) -- (midnode);
+    \draw (t3.north) -- (midnode);
+}
+
+\newcommand{\TopTriangleEspion}[3]{
+    \coordinate (left)  at ($(#1)+(-#2/2,-#3)$);
+    \coordinate (right) at ($(#1)+(#2/2,-#3)$);
+    \draw[very thick,fill=orange]
+        (#1) -- (left) -- (right) -- cycle;
+    \coordinate (basecenter) at ($(left)!0.5!(right)$);
+    \coordinate (yline) at ($(basecenter)+(0,0.35)$);
+    \node (t1) at ($(yline)+(-1,0.1)$) {};
+    \MiniTree{t1}
+    \node (t2) at ($(yline)+(-0.45,0.1)$) {};
+    \MiniTree{t2}
+    \node (t3) at ($(yline)+(0.85,0.1)$) {};
+    \MiniTree{t3}
+    \node at ($(yline)+(0.2,-0.12)$) {$\ldots$};
+    \node[
+        draw,
+        very thick,
+        circle,
+        fill=green,
+        inner sep=5pt
+    ]
+    (midnode)
+    at ($(#1)+(-0.05,-1)$) {};
+    \draw (t1.north) -- (midnode);
+    \draw (t2.north) -- (midnode);
+    \draw (t3.north) -- (midnode);
+}
+
+\newcommand{\wots}[1]{
+\tikzset{
+clesecrete/.style={draw,thick,circle,fill=red!50!white,inner sep=3pt},
+signature/.style={draw,thick,circle,fill=blue!50!white,inner sep=3pt},
+clepublique/.style={draw,thick,circle,fill=green!50!white,inner sep=3pt}
+}
+
+\node[clepublique,minimum width=0.75cm] (cp) at #1 {};
+\pgfmathsetmacro{\h}{2}
+\pgfmathsetmacro{\mydx}{0.5}
+\pgfmathsetmacro{\mydy}{0.75}
+
+\foreach \i/\idx in {-2/0,-1/1,0/2,2/3}{
+    \draw[green!50!white,fill=green!50!white] ($(cp)+(\i*\mydx-0.25*\mydx,-\mydy)$) rectangle++(0.5*\mydx,-\h);
+    \node[clepublique] (cp-\idx) at ($(cp)+(\i*\mydx,-\mydy)$) {};
+    \draw[thick] (cp-\idx)--(cp);
+}
+\foreach \i/\pos in {0/1.3,1/0.8,2/0.4,3/1.2}{
+    \pgfmathsetmacro{\pos}{rnd*1.6+0.2}
+    \draw[red!50!white,fill=red!50!white] ($(cp-\i)+(-0.25*\mydx,-\pos)$) rectangle++(0.5*\mydx,-\h+\pos);
+    \draw[dotted] (cp-\i.south)--($(cp-\i)-(0,\h)$);
+    \node[signature] (s-\i) at ($(cp-\i)+(0,-\pos)$) {};
+    \node[clesecrete] (cs-\i) at ($(cp-\i)+(0,-\h)$) {};
+}
+
+\shade[
+        bottom color=red!50!white,
+        top color=green!50!white
+    ]
+    ($(cp)+(\mydx-0.25*\mydx,-\mydy)$) rectangle++ (0.5*\mydx,-\h);
+    \draw[dotted] (cp)--($(cp)+(\mydx,-\mydy)$)--++(0,-\h);
+}
+\node[inner sep=0pt] (f-0) at (0,0) {};
+\foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2,...,15}{
+    \node[inner sep=0pt] (f-\i) [right=1.25cm of f-\j] {};
+}
+\foreach \i in {0,1,...,15}{
+    \TopTriangle{f-\i}{3}{3}
+}
+\foreach \i  in {0,1,...,7}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (h-1-\i) at ($(f-\Left)!0.5!(f-\Right)+(0,1)$) {};
+}
+\foreach \i in {0,1,...,7}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \draw[very thick,->] (f-\Left.north)--(h-1-\i);
+    \draw[very thick,->] (f-\Right.north)--(h-1-\i);
+}
+\foreach \i  in {0,1,...,3}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (h-2-\i) at ($(h-1-\Left)!0.5!(h-1-\Right)+(0,5)$) {};
+}
+
+\node[mynode] (h-3-0) at ($(h-2-0)!0.5!(h-2-1)+(0,1.5)$) {};
+\node[mynode] (h-3-1) at ($(h-2-2)!0.5!(h-2-3)+(0,1.5)$) {};
+\foreach \i in {0,1}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \draw[very thick,->] (h-2-\Left.north)--(h-3-\i);
+    \draw[very thick,->] (h-2-\Right.north)--(h-3-\i);
+}
+\node[mynode,fill=green] (h-4-0) at ($(h-3-0)!0.5!(h-3-1)+(0,1.5)$) {};
+
+\draw[very thick,->] (h-3-0.north)--(h-4-0);
+\draw[very thick,->] (h-3-1.north)--(h-4-0);
+
+\foreach \i/\j in {1/2,3/4,5/6}{
+    \draw[line width=2pt,red,dashed] ($(h-1-\i)!0.5!(h-1-\j)$)--++(0,-4);
+}
+\foreach \i in {0,1,2,3}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (w-\i) at ($(h-1-\Left)!0.5!(h-1-\Right)+(0,1.25)$) {};
+    \draw[very thick,->] (h-1-\Left)--(w-\i);
+    \draw[very thick,->] (h-1-\Right)--(w-\i);
+    \wots{(h-2-\i)}
+    \foreach \j in {0,1,2,3}{
+        \draw[thick] (w-\i)--(cs-\j);
+    }
+}
+
+\TopTriangleEspion{f-5}{3}{3}
+% \node[mynode,fill=orange] (h-1-2) at ($(f-4)!0.5!(f-5)+(0,1)$) {};
+% \node[mynode,fill=orange] (w-1) at ($(h-1-2)!0.5!(h-1-3)+(0,1.25)$) {};
+\end{tikzpicture}
+```
+
+##
+
+```{r engine="tikz"}
+#| fig-align: "center"
+#| fig-with: 5
+#| label: "fors-16-bad-actor-2"
+#| cache: true
+#| 
+\usetikzlibrary{positioning,calc,fit}
+\begin{tikzpicture}[
+mynode/.style={draw,circle,very thick, align=center, minimum width=0.75cm,fill=blue!50!white},
+]
+
+%------------------------------------------------
+% Mini arbre binaire
+% #1 = centre de l'arbre
+%------------------------------------------------
+\newcommand{\MiniTree}[1]{
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (root) at (#1) {};
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (leafL) at ($(root)+(-0.12,-0.28)$) {};
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (leafR) at ($(root)+(0.12,-0.28)$) {};
+    \draw (root) -- (leafL);
+    \draw (root) -- (leafR);
+}
+
+%------------------------------------------------
+% #1 = node au sommet supérieur
+% #2 = largeur du triangle
+% #3 = hauteur du triangle
+%------------------------------------------------
+\newcommand{\TopTriangle}[3]{
+    \coordinate (left)  at ($(#1)+(-#2/2,-#3)$);
+    \coordinate (right) at ($(#1)+(#2/2,-#3)$);
+    \draw[very thick,fill=green!50]
+        (#1) -- (left) -- (right) -- cycle;
+    \coordinate (basecenter) at ($(left)!0.5!(right)$);
+    \coordinate (yline) at ($(basecenter)+(0,0.35)$);
+    \node (t1) at ($(yline)+(-1,0.1)$) {};
+    \MiniTree{t1}
+    \node (t2) at ($(yline)+(-0.45,0.1)$) {};
+    \MiniTree{t2}
+    \node (t3) at ($(yline)+(0.85,0.1)$) {};
+    \MiniTree{t3}
+    \node at ($(yline)+(0.2,-0.12)$) {$\ldots$};
+    \node[
+        draw,
+        very thick,
+        circle,
+        fill=green,
+        inner sep=5pt
+    ]
+    (midnode)
+    at ($(#1)+(-0.05,-1)$) {};
+    \draw (t1.north) -- (midnode);
+    \draw (t2.north) -- (midnode);
+    \draw (t3.north) -- (midnode);
+}
+
+\newcommand{\TopTriangleEspion}[3]{
+    \coordinate (left)  at ($(#1)+(-#2/2,-#3)$);
+    \coordinate (right) at ($(#1)+(#2/2,-#3)$);
+    \draw[very thick,fill=orange]
+        (#1) -- (left) -- (right) -- cycle;
+    \coordinate (basecenter) at ($(left)!0.5!(right)$);
+    \coordinate (yline) at ($(basecenter)+(0,0.35)$);
+    \node (t1) at ($(yline)+(-1,0.1)$) {};
+    \MiniTree{t1}
+    \node (t2) at ($(yline)+(-0.45,0.1)$) {};
+    \MiniTree{t2}
+    \node (t3) at ($(yline)+(0.85,0.1)$) {};
+    \MiniTree{t3}
+    \node at ($(yline)+(0.2,-0.12)$) {$\ldots$};
+    \node[
+        draw,
+        very thick,
+        circle,
+        fill=green,
+        inner sep=5pt
+    ]
+    (midnode)
+    at ($(#1)+(-0.05,-1)$) {};
+    \draw (t1.north) -- (midnode);
+    \draw (t2.north) -- (midnode);
+    \draw (t3.north) -- (midnode);
+}
+
+\newcommand{\wots}[1]{
+\tikzset{
+clesecrete/.style={draw,thick,circle,fill=red!50!white,inner sep=3pt},
+signature/.style={draw,thick,circle,fill=blue!50!white,inner sep=3pt},
+clepublique/.style={draw,thick,circle,fill=green!50!white,inner sep=3pt}
+}
+
+\node[clepublique,minimum width=0.75cm] (cp) at #1 {};
+\pgfmathsetmacro{\h}{2}
+\pgfmathsetmacro{\mydx}{0.5}
+\pgfmathsetmacro{\mydy}{0.75}
+
+\foreach \i/\idx in {-2/0,-1/1,0/2,2/3}{
+    \draw[green!50!white,fill=green!50!white] ($(cp)+(\i*\mydx-0.25*\mydx,-\mydy)$) rectangle++(0.5*\mydx,-\h);
+    \node[clepublique] (cp-\idx) at ($(cp)+(\i*\mydx,-\mydy)$) {};
+    \draw[thick] (cp-\idx)--(cp);
+}
+\foreach \i/\pos in {0/1.3,1/0.8,2/0.4,3/1.2}{
+    \pgfmathsetmacro{\pos}{rnd*1.6+0.2}
+    \draw[red!50!white,fill=red!50!white] ($(cp-\i)+(-0.25*\mydx,-\pos)$) rectangle++(0.5*\mydx,-\h+\pos);
+    \draw[dotted] (cp-\i.south)--($(cp-\i)-(0,\h)$);
+    \node[signature] (s-\i) at ($(cp-\i)+(0,-\pos)$) {};
+    \node[clesecrete] (cs-\i) at ($(cp-\i)+(0,-\h)$) {};
+}
+
+\shade[
+        bottom color=red!50!white,
+        top color=green!50!white
+    ]
+    ($(cp)+(\mydx-0.25*\mydx,-\mydy)$) rectangle++ (0.5*\mydx,-\h);
+    \draw[dotted] (cp)--($(cp)+(\mydx,-\mydy)$)--++(0,-\h);
+}
+\node[inner sep=0pt] (f-0) at (0,0) {};
+\foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2,...,15}{
+    \node[inner sep=0pt] (f-\i) [right=1.25cm of f-\j] {};
+}
+\foreach \i in {0,1,...,15}{
+    \TopTriangle{f-\i}{3}{3}
+}
+\foreach \i  in {0,1,...,7}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (h-1-\i) at ($(f-\Left)!0.5!(f-\Right)+(0,1)$) {};
+}
+\foreach \i in {0,1,...,7}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \draw[very thick,->] (f-\Left.north)--(h-1-\i);
+    \draw[very thick,->] (f-\Right.north)--(h-1-\i);
+}
+\foreach \i  in {0,1,...,3}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (h-2-\i) at ($(h-1-\Left)!0.5!(h-1-\Right)+(0,5)$) {};
+}
+
+\node[mynode] (h-3-0) at ($(h-2-0)!0.5!(h-2-1)+(0,1.5)$) {};
+\node[mynode] (h-3-1) at ($(h-2-2)!0.5!(h-2-3)+(0,1.5)$) {};
+\foreach \i in {0,1}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \draw[very thick,->] (h-2-\Left.north)--(h-3-\i);
+    \draw[very thick,->] (h-2-\Right.north)--(h-3-\i);
+}
+\node[mynode,fill=green] (h-4-0) at ($(h-3-0)!0.5!(h-3-1)+(0,1.5)$) {};
+
+\draw[very thick,->] (h-3-0.north)--(h-4-0);
+\draw[very thick,->] (h-3-1.north)--(h-4-0);
+
+\foreach \i/\j in {1/2,3/4,5/6}{
+    \draw[line width=2pt,red,dashed] ($(h-1-\i)!0.5!(h-1-\j)$)--++(0,-4);
+}
+\foreach \i in {0,1,2,3}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (w-\i) at ($(h-1-\Left)!0.5!(h-1-\Right)+(0,1.25)$) {};
+    \draw[very thick,->] (h-1-\Left)--(w-\i);
+    \draw[very thick,->] (h-1-\Right)--(w-\i);
+    \wots{(h-2-\i)}
+    \foreach \j in {0,1,2,3}{
+        \draw[thick] (w-\i)--(cs-\j);
+    }
+}
+
+\TopTriangleEspion{f-5}{3}{3}
+\node[mynode,fill=orange] (h-1-2) at ($(f-4)!0.5!(f-5)+(0,1)$) {};
+% \node[mynode,fill=orange] (w-1) at ($(h-1-2)!0.5!(h-1-3)+(0,1.25)$) {};
+\end{tikzpicture}
+```
+
+##
+
+```{r engine="tikz"}
+#| fig-align: "center"
+#| fig-with: 5
+#| label: "fors-16-bad-actor-3"
+#| cache: true
+#| 
+\usetikzlibrary{positioning,calc,fit}
+\begin{tikzpicture}[
+mynode/.style={draw,circle,very thick, align=center, minimum width=0.75cm,fill=blue!50!white},
+]
+
+%------------------------------------------------
+% Mini arbre binaire
+% #1 = centre de l'arbre
+%------------------------------------------------
+\newcommand{\MiniTree}[1]{
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (root) at (#1) {};
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (leafL) at ($(root)+(-0.12,-0.28)$) {};
+    \node[draw,circle,fill=white,inner sep=2pt]
+        (leafR) at ($(root)+(0.12,-0.28)$) {};
+    \draw (root) -- (leafL);
+    \draw (root) -- (leafR);
+}
+
+%------------------------------------------------
+% #1 = node au sommet supérieur
+% #2 = largeur du triangle
+% #3 = hauteur du triangle
+%------------------------------------------------
+\newcommand{\TopTriangle}[3]{
+    \coordinate (left)  at ($(#1)+(-#2/2,-#3)$);
+    \coordinate (right) at ($(#1)+(#2/2,-#3)$);
+    \draw[very thick,fill=green!50]
+        (#1) -- (left) -- (right) -- cycle;
+    \coordinate (basecenter) at ($(left)!0.5!(right)$);
+    \coordinate (yline) at ($(basecenter)+(0,0.35)$);
+    \node (t1) at ($(yline)+(-1,0.1)$) {};
+    \MiniTree{t1}
+    \node (t2) at ($(yline)+(-0.45,0.1)$) {};
+    \MiniTree{t2}
+    \node (t3) at ($(yline)+(0.85,0.1)$) {};
+    \MiniTree{t3}
+    \node at ($(yline)+(0.2,-0.12)$) {$\ldots$};
+    \node[
+        draw,
+        very thick,
+        circle,
+        fill=green,
+        inner sep=5pt
+    ]
+    (midnode)
+    at ($(#1)+(-0.05,-1)$) {};
+    \draw (t1.north) -- (midnode);
+    \draw (t2.north) -- (midnode);
+    \draw (t3.north) -- (midnode);
+}
+
+\newcommand{\TopTriangleEspion}[3]{
+    \coordinate (left)  at ($(#1)+(-#2/2,-#3)$);
+    \coordinate (right) at ($(#1)+(#2/2,-#3)$);
+    \draw[very thick,fill=orange]
+        (#1) -- (left) -- (right) -- cycle;
+    \coordinate (basecenter) at ($(left)!0.5!(right)$);
+    \coordinate (yline) at ($(basecenter)+(0,0.35)$);
+    \node (t1) at ($(yline)+(-1,0.1)$) {};
+    \MiniTree{t1}
+    \node (t2) at ($(yline)+(-0.45,0.1)$) {};
+    \MiniTree{t2}
+    \node (t3) at ($(yline)+(0.85,0.1)$) {};
+    \MiniTree{t3}
+    \node at ($(yline)+(0.2,-0.12)$) {$\ldots$};
+    \node[
+        draw,
+        very thick,
+        circle,
+        fill=green,
+        inner sep=5pt
+    ]
+    (midnode)
+    at ($(#1)+(-0.05,-1)$) {};
+    \draw (t1.north) -- (midnode);
+    \draw (t2.north) -- (midnode);
+    \draw (t3.north) -- (midnode);
+}
+
+\newcommand{\wots}[1]{
+\tikzset{
+clesecrete/.style={draw,thick,circle,fill=red!50!white,inner sep=3pt},
+signature/.style={draw,thick,circle,fill=blue!50!white,inner sep=3pt},
+clepublique/.style={draw,thick,circle,fill=green!50!white,inner sep=3pt}
+}
+
+\node[clepublique,minimum width=0.75cm] (cp) at #1 {};
+\pgfmathsetmacro{\h}{2}
+\pgfmathsetmacro{\mydx}{0.5}
+\pgfmathsetmacro{\mydy}{0.75}
+
+\foreach \i/\idx in {-2/0,-1/1,0/2,2/3}{
+    \draw[green!50!white,fill=green!50!white] ($(cp)+(\i*\mydx-0.25*\mydx,-\mydy)$) rectangle++(0.5*\mydx,-\h);
+    \node[clepublique] (cp-\idx) at ($(cp)+(\i*\mydx,-\mydy)$) {};
+    \draw[thick] (cp-\idx)--(cp);
+}
+\foreach \i/\pos in {0/1.3,1/0.8,2/0.4,3/1.2}{
+    \pgfmathsetmacro{\pos}{rnd*1.6+0.2}
+    \draw[red!50!white,fill=red!50!white] ($(cp-\i)+(-0.25*\mydx,-\pos)$) rectangle++(0.5*\mydx,-\h+\pos);
+    \draw[dotted] (cp-\i.south)--($(cp-\i)-(0,\h)$);
+    \node[signature] (s-\i) at ($(cp-\i)+(0,-\pos)$) {};
+    \node[clesecrete] (cs-\i) at ($(cp-\i)+(0,-\h)$) {};
+}
+
+\shade[
+        bottom color=red!50!white,
+        top color=green!50!white
+    ]
+    ($(cp)+(\mydx-0.25*\mydx,-\mydy)$) rectangle++ (0.5*\mydx,-\h);
+    \draw[dotted] (cp)--($(cp)+(\mydx,-\mydy)$)--++(0,-\h);
+}
+\node[inner sep=0pt] (f-0) at (0,0) {};
+\foreach \i [evaluate=\i as \j using int(\i-1)] in {1,2,...,15}{
+    \node[inner sep=0pt] (f-\i) [right=1.25cm of f-\j] {};
+}
+\foreach \i in {0,1,...,15}{
+    \TopTriangle{f-\i}{3}{3}
+}
+\foreach \i  in {0,1,...,7}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (h-1-\i) at ($(f-\Left)!0.5!(f-\Right)+(0,1)$) {};
+}
+\foreach \i in {0,1,...,7}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \draw[very thick,->] (f-\Left.north)--(h-1-\i);
+    \draw[very thick,->] (f-\Right.north)--(h-1-\i);
+}
+\foreach \i  in {0,1,...,3}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (h-2-\i) at ($(h-1-\Left)!0.5!(h-1-\Right)+(0,5)$) {};
+}
+
+\node[mynode] (h-3-0) at ($(h-2-0)!0.5!(h-2-1)+(0,1.5)$) {};
+\node[mynode] (h-3-1) at ($(h-2-2)!0.5!(h-2-3)+(0,1.5)$) {};
+\foreach \i in {0,1}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \draw[very thick,->] (h-2-\Left.north)--(h-3-\i);
+    \draw[very thick,->] (h-2-\Right.north)--(h-3-\i);
+}
+\node[mynode,fill=green] (h-4-0) at ($(h-3-0)!0.5!(h-3-1)+(0,1.5)$) {};
+
+\draw[very thick,->] (h-3-0.north)--(h-4-0);
+\draw[very thick,->] (h-3-1.north)--(h-4-0);
+
+\foreach \i/\j in {1/2,3/4,5/6}{
+    \draw[line width=2pt,red,dashed] ($(h-1-\i)!0.5!(h-1-\j)$)--++(0,-4);
+}
+\foreach \i in {0,1,2,3}{
+    \pgfmathtruncatemacro{\Left}{2*\i}
+    \pgfmathtruncatemacro{\Right}{2*\i+1}
+    \node[mynode] (w-\i) at ($(h-1-\Left)!0.5!(h-1-\Right)+(0,1.25)$) {};
+    \draw[very thick,->] (h-1-\Left)--(w-\i);
+    \draw[very thick,->] (h-1-\Right)--(w-\i);
+    \wots{(h-2-\i)}
+    \foreach \j in {0,1,2,3}{
+        \draw[thick] (w-\i)--(cs-\j);
+    }
+}
+
+\TopTriangleEspion{f-5}{3}{3}
+\node[mynode,fill=orange] (h-1-2) at ($(f-4)!0.5!(f-5)+(0,1)$) {};
+\node[mynode,fill=orange] (w-1) at ($(h-1-2)!0.5!(h-1-3)+(0,1.25)$) {};
+\end{tikzpicture}
+```
+
 ## SPHINCS+
 
 - L'étage le plus bas (7) contient $2^{56}$ blocs de $2^8$ FORS.
@@ -5801,6 +6338,27 @@ clepublique/.style={draw,thick,circle,fill=green!50!white,inner sep=3pt}
 - L'étage 2 contient $2^{18}$ blocs de $2^8$ WOTS.
 - L'étage 1 contient $2^{10}$ blocs de $2^8$ WOTS.
 - L'étage 0 contient $2^2$ blocs de $2^8$ WOTS.
+
+## SPHINCS+
+
+-  $2^{56}$ blocs de $2^8$ FORS.
+- 1 FORS est composé de 16 arbres de $2^{16}$ clés secrètes.
+- Le nombre total de clés secrètes est donc $2^{56} \times 16 \times 2^{16} = 2^{76}$.
+- Ça correspond à $7,56 \times 10^{22}$, environ le nombre d'étoiles dans l'univers!
+
+## La signature 
+
+. . .
+
+> "Space is big. Really big. You just won't believe how vastly, hugely, mind-bogglingly big it is. I mean, you may think it's a long way down the road to the chemist's, but that's just peanuts to space."
+
+![](hitchhikers-guide-to-the-galaxy.png){width=250 fig-align="center"}
+
+## La signature {.scrollable}
+
+. . .
+
+{{< include signature_full.txt >}}
 
 ##
 
@@ -5938,6 +6496,13 @@ merkle/.style={fill=blue}
 \node[below=0.5cm of D] (E) {};
 \draw[line width=1pt,densely dashed] (E)--(D.south);
 \enveloppe{(E)}
+
+\node[fors] (fors-legende) at (2.5,0) {};
+\node[right=0.1cm of fors-legende] (fors-legende-text) {FORS};
+\node[below of=fors-legende,wots] (ots-legende) {};
+\node[right=0.1cm of ots-legende] (ots-legende-text) {WOTS};
+\node[below of=ots-legende,hash] (hash-legende) {};
+\node[right=0.1cm of hash-legende] (hash-legende-text) {EMPREINTE};
 
 \end{tikzpicture}
 ```
