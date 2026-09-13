@@ -1138,12 +1138,12 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 - Au message suivant, on ne peut plus utiliser la même clé secrète!
 - On doit générer une nouvelle paire de clés secrète/publique pour chaque message à signer.
 
-## {.fullscreen-slide}
+<!-- ## {.fullscreen-slide}
 
 <iframe
   src="html/lamport.html"
   class="lamport-frame">
-</iframe>
+</iframe> -->
 
 ## Produit de très grosses signatures!
 
@@ -3328,7 +3328,7 @@ flowchart BT
 ```
 
 - Pour authentifier $cs_1$, on doit fournir: $cs_1$, $H(cs_0)$ et $H(cs_{2-3})$.
-- On appelle cela une preuve de Merkle (*Merkle proof*) et elle permet de vérifier que $cs_1$ est bien authentique à partir de la clé publique $cp$.
+- On appelle cela une preuve de Merkle et elle permet de vérifier que $cs_1$ est bien authentique à partir de la clé publique $cp$.
 
 ## Preuve de Merkle
 
@@ -5791,6 +5791,8 @@ clepublique/.style={draw,thick,circle,fill=green!50!white,inner sep=3pt}
 \end{tikzpicture}
 ```
 
+# Comment détecter un acteur malveillant? {background-color="black" background-position="center"}
+
 ##
 
 ```{r engine="tikz"}
@@ -6507,9 +6509,16 @@ merkle/.style={fill=blue}
 \end{tikzpicture}
 ```
 
-## FIN
+## Pour en savoir plus...
 
+::: {.nonincremental}
 
+- [SPHINCS+](https://sphincs.org/)
+- [SLH-DSA](https://di-mgt.com.au/pqc-00-slhdsa.html)
+- [Telsy](https://www.telsy.com/en/sphincs-stateless-hash-based-digital-signature/)
+- [Blog d'Er4hn](https://er4hn.info/blog/2023.12.16-sphincs_plus-step-by-step/)
+
+:::
 
 
 
