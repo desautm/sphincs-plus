@@ -1433,31 +1433,22 @@ Marc-André Désautels
 <li class="fragment">Pour authentifier <span class="math inline">\(cs_1\)</span>, on doit fournir: <span class="math inline">\(cs_1\)</span>, <span class="math inline">\(H(cs_0)\)</span> et <span class="math inline">\(H(cs_{2-3})\)</span>.</li>
 <li class="fragment">On appelle cela une preuve de Merkle et elle permet de vérifier que <span class="math inline">\(cs_1\)</span> est bien authentique à partir de la clé publique <span class="math inline">\(cp\)</span>.</li>
 </ul>
-</section>
-<section id="preuve-de-merkle" class="slide level2">
-<h2>Preuve de Merkle</h2>
-<ul>
-<li class="fragment">Pour authentifier une clé secrète <span class="math inline">\(cs_i\)</span>, on doit fournir:
-<ul>
-<li class="fragment"><span class="math inline">\(cs_i\)</span> elle-même;</li>
-<li class="fragment">les empreintes de tous les noeuds frères sur le chemin de la feuille <span class="math inline">\(cs_i\)</span> jusqu’à la racine <span class="math inline">\(cp\)</span>;</li>
-<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
-</ul></li>
-<li class="fragment">Le nombre d’empreintes dépend de la hauteur de l’arbre.</li>
-<li class="fragment">Si le nombre de clés secrètes est de <span class="math inline">\(2^h\)</span>, alors la preuve de Merkle contient <span class="math inline">\(h\)</span> empreintes.</li>
-</ul>
-</section>
-<section id="preuve-de-merkle-pour-4-clés-secrètes" class="slide level2">
-<h2>Preuve de Merkle pour 4 clés secrètes</h2>
-<ul>
-<li class="fragment">On doit fournir:
-<ul>
-<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">2 (<span class="math inline">\(4=2^2\)</span>) empreintes des noeuds frères;</li>
-<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
-</ul></li>
-<li class="fragment">La preuve de Merkle contient 4 éléments (1 clé secrète + 2 empreintes + 1 clé publique).</li>
-</ul>
+<!-- ## Preuve de Merkle
+
+- Pour authentifier une clé secrète $cs_i$, on doit fournir:
+    - $cs_i$ elle-même;
+    - les empreintes de tous les noeuds frères sur le chemin de la feuille $cs_i$ jusqu'à la racine $cp$;
+    - la clé publique $cp$.
+- Le nombre d'empreintes dépend de la hauteur de l'arbre.
+- Si le nombre de clés secrètes est de $2^h$, alors la preuve de Merkle contient $h$ empreintes.
+
+## Preuve de Merkle pour 4 clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - 2 ($4=2^2$) empreintes des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient 4 éléments (1 clé secrète + 2 empreintes + 1 clé publique). -->
 </section>
 <section id="section-46" class="slide level2">
 <h2></h2>
@@ -1530,18 +1521,13 @@ Marc-André Désautels
 </div>
 </div>
 </div>
-</section>
-<section id="preuve-de-merkle-pour-8-clés-secrètes" class="slide level2">
-<h2>Preuve de Merkle pour 8 clés secrètes</h2>
-<ul>
-<li class="fragment">On doit fournir:
-<ul>
-<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">3 (<span class="math inline">\(8=2^3\)</span>) empreintes des noeuds frères;</li>
-<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
-</ul></li>
-<li class="fragment">La preuve de Merkle contient 5 éléments (1 clé secrète + 3 empreintes + 1 clé publique).</li>
-</ul>
+<!-- ## Preuve de Merkle pour 8 clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - 3 ($8=2^3$) empreintes des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient 5 éléments (1 clé secrète + 3 empreintes + 1 clé publique). -->
 </section>
 <section id="section-47" class="slide level2">
 <h2></h2>
@@ -1738,18 +1724,13 @@ Marc-André Désautels
 </div>
 </div>
 </div>
-</section>
-<section id="preuve-de-merkle-pour-16-clés-secrètes" class="slide level2">
-<h2>Preuve de Merkle pour 16 clés secrètes</h2>
-<ul>
-<li class="fragment">On doit fournir:
-<ul>
-<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">4 (<span class="math inline">\(16=2^4\)</span>) empreintes des noeuds frères;</li>
-<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
-</ul></li>
-<li class="fragment">La preuve de Merkle contient 6 éléments (1 clé secrète + 4 empreintes + 1 clé publique).</li>
-</ul>
+<!-- ## Preuve de Merkle pour 16 clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - 4 ($16=2^4$) empreintes des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient 6 éléments (1 clé secrète + 4 empreintes + 1 clé publique). -->
 </section>
 <section id="section-49" class="slide level2">
 <h2></h2>
@@ -1874,18 +1855,13 @@ Marc-André Désautels
 </div>
 </div>
 </div>
-</section>
-<section id="preuve-de-merkle-pour-2h-clés-secrètes" class="slide level2">
-<h2>Preuve de Merkle pour <span class="math inline">\(2^h\)</span> clés secrètes</h2>
-<ul>
-<li class="fragment">On doit fournir:
-<ul>
-<li class="fragment">une clé secrète <span class="math inline">\(cs_i\)</span>;</li>
-<li class="fragment">h (<span class="math inline">\(2^h\)</span>) empreintes des noeuds frères;</li>
-<li class="fragment">la clé publique <span class="math inline">\(cp\)</span>.</li>
-</ul></li>
-<li class="fragment">La preuve de Merkle contient <span class="math inline">\(h+2\)</span> éléments (1 clé secrète + <span class="math inline">\(h\)</span> empreintes + 1 clé publique).</li>
-</ul>
+<!-- ## Preuve de Merkle pour $2^h$ clés secrètes
+
+- On doit fournir:
+    - une clé secrète $cs_i$;
+    - h ($2^h$) empreintes des noeuds frères;
+    - la clé publique $cp$.
+- La preuve de Merkle contient $h+2$ éléments (1 clé secrète + $h$ empreintes + 1 clé publique). -->
 </section></section>
 <section>
 <section id="few-time-signatures-fts" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">

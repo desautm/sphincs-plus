@@ -3330,7 +3330,7 @@ flowchart BT
 - Pour authentifier $cs_1$, on doit fournir: $cs_1$, $H(cs_0)$ et $H(cs_{2-3})$.
 - On appelle cela une preuve de Merkle et elle permet de vérifier que $cs_1$ est bien authentique à partir de la clé publique $cp$.
 
-## Preuve de Merkle
+<!-- ## Preuve de Merkle
 
 - Pour authentifier une clé secrète $cs_i$, on doit fournir:
     - $cs_i$ elle-même;
@@ -3345,7 +3345,7 @@ flowchart BT
     - une clé secrète $cs_i$;
     - 2 ($4=2^2$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient 4 éléments (1 clé secrète + 2 empreintes + 1 clé publique).
+- La preuve de Merkle contient 4 éléments (1 clé secrète + 2 empreintes + 1 clé publique). -->
 
 ##
 
@@ -3412,13 +3412,13 @@ flowchart BT
   classDef hash fill:blue,color:black,stroke-width:4px,font-size:25px;
 ```
 
-## Preuve de Merkle pour 8 clés secrètes
+<!-- ## Preuve de Merkle pour 8 clés secrètes
 
 - On doit fournir:
     - une clé secrète $cs_i$;
     - 3 ($8=2^3$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient 5 éléments (1 clé secrète + 3 empreintes + 1 clé publique).
+- La preuve de Merkle contient 5 éléments (1 clé secrète + 3 empreintes + 1 clé publique). -->
 
 ##
 
@@ -3602,13 +3602,13 @@ flowchart BT
   classDef hash fill:blue,color:black,stroke-width:4px,font-size:22px;
 ```
 
-## Preuve de Merkle pour 16 clés secrètes
+<!-- ## Preuve de Merkle pour 16 clés secrètes
 
 - On doit fournir:
     - une clé secrète $cs_i$;
     - 4 ($16=2^4$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient 6 éléments (1 clé secrète + 4 empreintes + 1 clé publique).
+- La preuve de Merkle contient 6 éléments (1 clé secrète + 4 empreintes + 1 clé publique). -->
 
 ##
 
@@ -3727,13 +3727,13 @@ flowchart BT
   class cs4,Hcs5,Hcs6-7,Hcs0-3,Hcs8-15 proof;
 ```
 
-## Preuve de Merkle pour $2^h$ clés secrètes
+<!-- ## Preuve de Merkle pour $2^h$ clés secrètes
 
 - On doit fournir:
     - une clé secrète $cs_i$;
     - h ($2^h$) empreintes des noeuds frères;
     - la clé publique $cp$.
-- La preuve de Merkle contient $h+2$ éléments (1 clé secrète + $h$ empreintes + 1 clé publique).
+- La preuve de Merkle contient $h+2$ éléments (1 clé secrète + $h$ empreintes + 1 clé publique). -->
 
 # Few Time Signatures (FTS) {background-color="black" background-position="center"}
 
