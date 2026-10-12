@@ -1145,7 +1145,7 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
   class="lamport-frame">
 </iframe> -->
 
-## Produit de très grosses signatures!
+<!-- ## Produit de très grosses signatures!
 
 . . .
 
@@ -1161,7 +1161,7 @@ $$cp_{i,j}=H(cs_{i,j}) \text{ pour } i=0,1 \text{ et } j=0,\ldots,255$$
 
 . . .
 
-131 072 bits = 16 384 octets = 16,38 Ko
+131 072 bits = 16 384 octets = 16,38 Ko -->
 
 # *Winternitz One-Time Signature* (WOTS) {background-color="black" background-position="center"}
 
@@ -2751,7 +2751,7 @@ count/.style={font=\Huge}
 \end{tikzpicture}
 ```
 
-## Produit de petites signatures!
+<!-- ## Produit de petites signatures!
 
 . . .
 
@@ -2767,7 +2767,7 @@ count/.style={font=\Huge}
 
 . . .
 
-17 664 bits = 2 208 octets = 2,21 Ko
+17 664 bits = 2 208 octets = 2,21 Ko -->
 
 ## {auto-animate=true}
 
@@ -3985,7 +3985,7 @@ Signatures utilisables un petit nombre de fois.
 \end{tikzpicture}
 ```
 
-## Produit de TRÈS grosses signatures!
+<!-- ## Produit de TRÈS grosses signatures!
 
 . . .
 
@@ -4001,7 +4001,7 @@ Signatures utilisables un petit nombre de fois.
 
 . . .
 
-16 785 664 bits = 2 098 208 octets = 2098,2 Ko
+16 785 664 bits = 2 098 208 octets = 2098,2 Ko -->
 
 ## Mécanisme de signature utilisable quelques fois seulement!
 
@@ -4148,7 +4148,7 @@ plt.show()
 \end{tikzpicture}
 ```
 
-## Produit de petites ~~grosses~~ signatures!
+<!-- ## Produit de petites ~~grosses~~ signatures!
 
 . . .
 
@@ -4164,7 +4164,7 @@ plt.show()
 
 . . .
 
-74 240 bits = 9 280 octets = 9,280 Ko
+74 240 bits = 9 280 octets = 9,280 Ko -->
 
 ## FORS (*Forest of Random Subsets*)
 

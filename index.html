@@ -581,48 +581,23 @@ On combine les deux :
   src="html/lamport.html"
   class="lamport-frame">
 </iframe> -->
-</section>
-<section id="produit-de-très-grosses-signatures" class="slide level2">
-<h2>Produit de très grosses signatures!</h2>
-<div class="fragment">
-<table class="caption-top">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 55%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Taille</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Message</strong></td>
-<td>256 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Clé secrète</strong></td>
-<td>2 * 256 * 256=131 072 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Clé publique</strong></td>
-<td>2 * 256 * 256=131 072 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Signature</strong></td>
-<td>256 * 256=65 536 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Message + clé publique + signature</strong></td>
-<td>196 864 bits</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<p>131 072 bits = 16 384 octets = 16,38 Ko</p>
-</div>
+<!-- ## Produit de très grosses signatures!
+
+. . .
+
+| **Type** | **Taille** |
+|---|---|
+| **Message** | 256 bits |
+| **Clé secrète** | 2 * 256 * 256=131 072 bits |
+| **Clé publique** | 2 * 256 * 256=131 072 bits |
+| **Signature** | 256 * 256=65 536 bits |
+| **Message + clé publique + signature** | 196 864 bits |
+
+: {tbl-colwidths="[45,55]"}
+
+. . .
+
+131 072 bits = 16 384 octets = 16,38 Ko -->
 </section></section>
 <section>
 <section id="winternitz-one-time-signature-wots" class="title-slide slide level1 center" data-background-color="black" data-background-position="center">
@@ -822,49 +797,24 @@ On combine les deux :
 <section id="section-33" class="slide level2">
 <h2></h2>
 
+<!-- ## Produit de petites signatures!
+
+. . .
+
+| **Type** | **Taille** |
+|---|---|
+| **Message** | 256 bits |
+| **Clé secrète** | 67 * 256 = 17 152 bits |
+| **Clé publique** | 256 = 256 bits |
+| **Signature** | 67 * 256 = 17 152 bits |
+| **Message + clé publique + signature** | 17 664 bits |
+
+: {tbl-colwidths="[45,55]"}
+
+. . .
+
+17 664 bits = 2 208 octets = 2,21 Ko -->
 <img data-src="index_files/figure-revealjs/wots-complet-hash-cle-publique-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="produit-de-petites-signatures" class="slide level2">
-<h2>Produit de petites signatures!</h2>
-<div class="fragment">
-<table class="caption-top">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 55%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Taille</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Message</strong></td>
-<td>256 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Clé secrète</strong></td>
-<td>67 * 256 = 17 152 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Clé publique</strong></td>
-<td>256 = 256 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Signature</strong></td>
-<td>67 * 256 = 17 152 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Message + clé publique + signature</strong></td>
-<td>17 664 bits</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<p>17 664 bits = 2 208 octets = 2,21 Ko</p>
-</div>
-</section>
 <section id="section-34" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 
@@ -1886,49 +1836,24 @@ On combine les deux :
 <section id="section-52" class="slide level2">
 <h2></h2>
 
+<!-- ## Produit de TRÈS grosses signatures!
+
+. . .
+
+| **Type** | **Taille** |
+|---|---|
+| **Message** | 256 bits |
+| **Clé secrète** | 65 536 * 256 = 16 777 216 bits |
+| **Clé publique** | 65 536 * 256 = 16 777 216 bits |
+| **Signature** | 16 * 256 = 8 192 bits |
+| **Message + clé publique + signature** | 16 785 664 bits |
+
+: {tbl-colwidths="[45,55]"}
+
+. . .
+
+16 785 664 bits = 2 098 208 octets = 2098,2 Ko -->
 <img data-src="index_files/figure-revealjs/hors-16-octets-etape-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="produit-de-très-grosses-signatures-1" class="slide level2">
-<h2>Produit de TRÈS grosses signatures!</h2>
-<div class="fragment">
-<table class="caption-top">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 55%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Taille</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Message</strong></td>
-<td>256 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Clé secrète</strong></td>
-<td>65 536 * 256 = 16 777 216 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Clé publique</strong></td>
-<td>65 536 * 256 = 16 777 216 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Signature</strong></td>
-<td>16 * 256 = 8 192 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Message + clé publique + signature</strong></td>
-<td>16 785 664 bits</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<p>16 785 664 bits = 2 098 208 octets = 2098,2 Ko</p>
-</div>
-</section>
 <section id="mécanisme-de-signature-utilisable-quelques-fois-seulement" class="slide level2">
 <h2>Mécanisme de signature utilisable quelques fois seulement!</h2>
 <ul>
@@ -1957,49 +1882,24 @@ On combine les deux :
 <section id="message-011-110-100" class="slide level2">
 <h2>Message 011 110 100</h2>
 
+<!-- ## Produit de petites ~~grosses~~ signatures!
+
+. . .
+
+| **Type** | **Taille** |
+|---|---|
+| **Message** | 256 bits |
+| **Clé secrète** | 65 536 * 256 = 16 777 216 bits |
+| **Clé publique** | 256 = 256 bits |
+| **Signature** | 16 * 18 * 256 = 73 728 bits |
+| **Message + clé publique + signature** | 74 240 bits |
+
+: {tbl-colwidths="[45,55]"}
+
+. . .
+
+74 240 bits = 9 280 octets = 9,280 Ko -->
 <img data-src="index_files/figure-revealjs/horst-8-signature-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="produit-de-petites-grosses-signatures" class="slide level2">
-<h2>Produit de petites <del>grosses</del> signatures!</h2>
-<div class="fragment">
-<table class="caption-top">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 55%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Taille</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Message</strong></td>
-<td>256 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Clé secrète</strong></td>
-<td>65 536 * 256 = 16 777 216 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Clé publique</strong></td>
-<td>256 = 256 bits</td>
-</tr>
-<tr class="even">
-<td><strong>Signature</strong></td>
-<td>16 * 18 * 256 = 73 728 bits</td>
-</tr>
-<tr class="odd">
-<td><strong>Message + clé publique + signature</strong></td>
-<td>74 240 bits</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<p>74 240 bits = 9 280 octets = 9,280 Ko</p>
-</div>
-</section>
 <section id="fors-forest-of-random-subsets" class="slide level2">
 <h2>FORS (<em>Forest of Random Subsets</em>)</h2>
 <ul>
