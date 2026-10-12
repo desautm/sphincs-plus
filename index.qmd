@@ -37,15 +37,15 @@ La **cryptographie** est l’ensemble des techniques permettant de:
 
 - **Confidentialité** → garder un message secret  
 - **Intégrité** → détecter toute modification  
-- **Authenticité** → vérifier l’identité de l’expéditeur  
 - **Non-répudiation** → empêcher de nier une action  
+- **Authenticité** → vérifier l’identité de l’expéditeur  (**Signatures numériques**)
 
-## 💡 Applications
+<!-- ## 💡 Applications
 
 - Messagerie sécurisée  
 - Transactions bancaires  
 - Mots de passe  
-- **Signatures numériques**
+- **Signatures numériques** -->
 
 # Cryptographie symétrique vs asymétrique {background-color="black" background-position="center"}
 
@@ -198,12 +198,12 @@ La **cryptographie** est l’ensemble des techniques permettant de:
 ```
 
 
-## 💡 En pratique
+<!-- ## 💡 En pratique
 
 On combine les deux :
 
 - asymétrique → échanger une clé  
-- symétrique → chiffrer les données
+- symétrique → chiffrer les données -->
 
 # Cryptographie post-quantique {background-color="black" background-position="center"}
 
