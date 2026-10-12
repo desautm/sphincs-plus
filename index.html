@@ -607,7 +607,7 @@ On combine les deux :
 <section id="wots" class="slide level2">
 <h2>WOTS</h2>
 <ul>
-<li class="fragment">On brise l’empreinte du message (256 bits) en 64 morceaux de 4 bits.</li>
+<li class="fragment">On brise l’empreinte du message (256 bits) en 64 morceaux de 4 bits. On pourrait aussi briser l’empreinte en 32 morceaux de 8 bits, ou en 16 morceaux de 16 bits, etc.</li>
 <li class="fragment">On interprète chaque morceau de 4 bits comme un nombre entre 0 et 15.</li>
 </ul>
 </section>
@@ -659,7 +659,7 @@ On combine les deux :
 <section id="wots-1" class="slide level2">
 <h2>WOTS</h2>
 <ul>
-<li>On brise l’empreinte du message (256 bits) en 64 morceaux de 4 bits.</li>
+<li>On brise l’empreinte du message (256 bits) en 64 morceaux de 4 bits. On pourrait aussi briser l’empreinte en 32 morceaux de 8 bits, ou en 16 morceaux de 16 bits, etc.</li>
 <li>On interprète chaque morceau de 4 bits comme un nombre entre 0 et 15.</li>
 <li>Puisque nous formons 64 blocs de message, nous pourrions créer 64 familles de clés secrètes, une pour chaque bloc.</li>
 </ul>
@@ -2066,8 +2066,8 @@ On combine les deux :
 <ul>
 <li class="fragment"><span class="math inline">\(2^{56}\)</span> blocs de <span class="math inline">\(2^8\)</span> FORS.</li>
 <li class="fragment">1 FORS est composé de 16 arbres de <span class="math inline">\(2^{16}\)</span> clés secrètes.</li>
-<li class="fragment">Le nombre total de clés secrètes est donc <span class="math inline">\(2^{56} \times 16 \times 2^{16} = 2^{76}\)</span>.</li>
-<li class="fragment">Ça correspond à <span class="math inline">\(7,56 \times 10^{22}\)</span>, environ le nombre d’étoiles dans l’univers!</li>
+<li class="fragment">Le nombre total de clés secrètes est donc <span class="math inline">\(2^{64} \times 16 \times 2^{16} = 2^{84}\)</span>.</li>
+<li class="fragment">Ça correspond à <span class="math inline">\(1,93 \times 10^{25}\)</span>, environ le nombre d’étoiles dans l’univers!</li>
 </ul>
 </section>
 <section id="la-signature" class="slide level2">
